@@ -1,3 +1,4 @@
+//camabiar todo 
 document.addEventListener('DOMContentLoaded', function() {
   const listaCarrito = document.getElementById('listaCarrito');
   const carritoVacio = document.getElementById('carritoVacio');
