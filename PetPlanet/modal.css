@@ -1,0 +1,195 @@
+/* ===============================
+   MODAL DE PRODUCTO
+   =============================== */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* solo scroll vertical */
+  overflow-x: hidden; /* quitar scroll horizontal */
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: 0 auto; /* centrado horizontal */
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px; /* reducido */
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+  margin-top: 20px; /* pegado arriba */
+  overflow: hidden;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.modal-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.modal-precio {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #2e7d32;
+}
+
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #000;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.btn-cesta {
+  background-color: #3fa35f;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-cesta:hover {
+  background-color: #53d179;
+}
+
+/* Modo oscuro para el modal */
+body.modo-oscuro .modal-contenido {
+  background-color: #222;
+  color: #fff; /* letras blancas */
+}
+body.modo-oscuro .cerrar {
+  color: #fff;
+}
+body.modo-oscuro .btn-cesta {
+  background-color: #4caf50;
+}
+
+/* ===============================
+   COMENTARIOS EN EL MODAL
+   =============================== */
+.comentarios-seccion {
+  margin-top: 20px;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.comentarios-seccion h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333; /* normal */
+}
+
+/* Modo oscuro: título en blanco */
+body.modo-oscuro .comentarios-seccion h3 {
+  color: #fff;
+}
+
+/* Fondo de comentarios */
+.lista-comentarios {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+body.modo-oscuro .lista-comentarios {
+  background-color: #1f1f1f;
+}
+
+.comentario {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 0.95em;
+  word-wrap: break-word;
+}
+body.modo-oscuro .comentario {
+  background-color: #2a2a2a;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.sin-comentarios {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+body.modo-oscuro .sin-comentarios {
+  color: #ccc;
+}
+
+.nuevo-comentario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+body.modo-oscuro .nuevo-comentario {
+  background: #222;
+  border-top: 1px solid #333;
+}
+
+.nuevo-comentario textarea {
+  resize: vertical;
+  min-height: 60px;
+  max-height: 120px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 0.95em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-enviar-comentario {
+  align-self: flex-end;
+  background-color: #1c692e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  margin-bottom: 5px;
+}
+.btn-enviar-comentario:hover {
+  background-color: #2e9e47;
+  transform: scale(1.05);
+}
+body.modo-oscuro .btn-enviar-comentario {
+  background-color: #4caf50;
+}
+body.modo-oscuro .btn-enviar-comentario:hover {
+  background-color: #5bd36c;
+}

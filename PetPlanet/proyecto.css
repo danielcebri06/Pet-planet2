@@ -1,0 +1,751 @@
+.buscador-contenedor {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0;
+}
+.buscador {
+    width: 260px;
+    padding: 8px 12px;
+    border-radius: 18px 0 0 18px;
+    border: 1px solid #b3e6c9;
+    font-size: 0.95em;
+    background: #e3f0ff; 
+    color: #222;
+    outline: none;
+}
+.btn-buscar {
+    padding: 8px 16px;
+    border-radius: 0 18px 18px 0;
+    border: 1px solid #b3e6c9;
+    background: #5c9b5b; 
+    color: #fff;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-buscar:hover {
+    background: #b3e6c9; 
+    color: #222;
+}
+
+/* --------------------------------------------------------------------------
+   CABECERA Y LOGO
+--------------------------------------------------------------------------- */
+.cabecera-logo {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 50px;
+    margin-right: 16px;
+}
+
+/* ---------------- MENÚ HAMBURGUESA ---------------- */
+.menu-hamburguesa {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.hamburguesa-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.hamburguesa-btn:hover {
+  color: #9affb0;
+  transform: scale(1.1);
+}
+.hamburguesa-btn.rotar {
+  transform: rotate(90deg);
+  color: #7df07d;
+}
+.menu-desplegable {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  min-width: 180px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.menu-desplegable.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-desplegable a,
+.menu-desplegable button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  color: #333;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+.menu-desplegable a:hover,
+.menu-desplegable button:hover {
+  background-color: #f0f0f0;
+}
+/* =========================================
+   Estilos para el Footer y Avisos Legales
+   ========================================= */
+
+footer {
+    /* Aseguramos que el contenido se centre si no estaba definido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Contenedor de los enlaces legales */
+footer .legales {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea separadora sutil */
+    width: 80%; /* Que no ocupe todo el ancho */
+}
+
+/* Estilo de los enlaces */
+footer .legales a {
+    color: inherit; /* Usa el mismo color de texto que tenga el footer */
+    text-decoration: none; /* Quita el subrayado por defecto */
+    margin: 0 10px; /* Espacio entre enlaces */
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por encima */
+footer .legales a:hover {
+    text-decoration: underline;
+    opacity: 0.8; /* Se vuelve un poco más transparente al pasar el ratón */
+}
+/* --------------------------------------------------------------------------
+   ESTILOS GENERALES
+--------------------------------------------------------------------------- */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+
+header {
+    background-color: #1c692e;
+    padding: 2px 0;
+    min-height: 32px;
+}
+.fila-productos {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.fila-productos .producto {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  
+}
+.producto {
+    cursor: pointer; 
+}
+
+.logo {
+    height: 120px;
+    margin-right: 12px;
+}
+.principal {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.menu {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.menu :hover {
+    background: #ad8d17; 
+    border-radius: 5px;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: text-decoration 0.2s;
+    padding: 6px 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.banner {
+    background: url('imagenes/Banner.avif') center/cover no-repeat;
+    color: #ffffff;
+    padding: 80px 0 60px 0;
+    text-align: center;
+    height: 500px;
+}
+.banner h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 8px #0008;
+}
+.banner p {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 6px #0007;
+}
+.banner a {
+    background: #ffffff; 
+    color: #1c692e; 
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.2s, color 0.2s;
+}
+.banner a:hover {
+    background: #ffe3e3; 
+    color: #655a5a; 
+    border: 1px solid  #ad8d17;
+}
+footer {
+    background: #e3f6ff; 
+    color: #b04f63; 
+    text-align: center;
+    padding: 14px 0 12px 0;
+    margin-top: 30px;
+    font-size: 0.95em;
+}
+footer a {
+    color: #6eaef5;
+    text-decoration: none;
+    margin: 0 8px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+/* -----------------------------
+   INTERRUPTOR DE MODO OSCURO 
+------------------------------ */
+.modo-oscuro-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  gap: 12px;
+  background: transparent;
+  border-top: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+/* Contenedor del switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Slider de fondo */
+.switch .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+
+/* Botón que se mueve */
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* Cuando el checkbox está activado */
+.switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(25px); /* se mueve a la derecha */
+}
+
+/* Texto de estado */
+#estadoModoOscuro {
+  font-size: 0.95em;
+  color: #333;
+  flex: 1;
+}
+
+/* Modo oscuro del texto y del switch */
+body.modo-oscuro #estadoModoOscuro {
+  color: #9affb0;
+}
+
+body.modo-oscuro .modo-oscuro-switch {
+  border-top: 1px solid #333;
+}
+
+
+/* ============================================================
+   RESPONSIVE 
+============================================================ */
+
+/* -------------------- Tablets -------------------- */
+@media (max-width: 992px) {
+  .principal {
+    width: 95%;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  nav a {
+    font-size: 0.9em;
+    margin: 0 10px;
+    padding: 5px 8px;
+  }
+
+  .buscador {
+    width: 220px;
+  }
+
+  .banner {
+    height: 400px;
+    padding: 60px 0 40px 0;
+  }
+
+  .banner h1 {
+    font-size: 2.2em;
+  }
+
+  .banner p {
+    font-size: 1.1em;
+  }
+}
+
+/* -------------------- Móviles -------------------- */
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .principal {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cabecera-logo {
+    justify-content: center;
+  }
+
+  .logo {
+    height: 80px;
+    margin: 10px 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-hamburguesa {
+    top: 10px;
+    right: 10px;
+  }
+
+  .buscador {
+    width: 180px;
+    font-size: 0.9em;
+  }
+
+  .btn-buscar {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  .productos-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .producto {
+    width: 90%;
+    max-width: 380px;
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner a {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 10px 0;
+  }
+}
+
+/* -------------------- Teléfonos pequeños -------------------- */
+@media (max-width: 480px) {
+  .hamburguesa-btn {
+    font-size: 22px;
+  }
+
+  .menu-desplegable {
+    min-width: 150px;
+    font-size: 0.9em;
+  }
+
+  .modo-oscuro-switch {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  #estadoModoOscuro {
+    font-size: 0.85em;
+  }
+
+  .banner {
+    height: 320px;
+    padding: 40px 0;
+  }
+
+  .banner h1 {
+    font-size: 1.8em;
+  }
+
+  .banner p {
+    font-size: 1em;
+  }
+
+  .banner a {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+}
+
+/* -------- Modo oscuro global -------- */
+body.modo-oscuro {
+  background-color: #121212;
+  color: #eaeaea;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.modo-oscuro header {
+  background-color: #0e3d1d;
+  border-bottom: 2px solid #3fa35f;
+}
+body.modo-oscuro .logo {
+  filter: brightness(0.9);
+}
+body.modo-oscuro nav a {
+  color: #f1f1f1;
+}
+body.modo-oscuro nav a:hover {
+  background-color: #2b6e3a;
+  border-radius: 6px;
+  color: #fff;
+}
+body.modo-oscuro p {
+  color: #ccc;
+}
+body.modo-oscuro .buscador {
+  background-color: #222;
+  color: #eee;
+  border-color: #444;
+}
+body.modo-oscuro .btn-buscar {
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #357a38;
+}
+body.modo-oscuro .btn-buscar:hover {
+  background-color: #2e7d32;
+}
+body.modo-oscuro .miga-de-pan {
+  background-color: #1f1f1f;
+  color: #bbb;
+}
+body.modo-oscuro .miga-de-pan a {
+  color: #82d18c;
+}
+body.modo-oscuro .productos {
+  background-color: #181818;
+  color: #eaeaea;
+}
+body.modo-oscuro .producto {
+  background-color: #222;
+  border: 1px solid #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+body.modo-oscuro .producto h2 {
+  color: #fff;
+}
+body.modo-oscuro .precio-original {
+  color: #999;
+  text-decoration: line-through;
+}
+body.modo-oscuro .precio-oferta {
+  color: #7df07d;
+  font-weight: bold;
+}
+body.modo-oscuro .btn-comprar {
+  background-color: #3fa35f;
+  color: #fff;
+  border: none;
+}
+body.modo-oscuro .btn-comprar:hover {
+  background-color: #53d179;
+}
+body.modo-oscuro .oferta-tag {
+  background-color: #e57373;
+  color: white;
+}
+body.modo-oscuro footer {
+  background-color: #0b0b0b;
+  color: #8ae39c;
+  border-top: 2px solid #3fa35f;
+}
+body.modo-oscuro footer a {
+  color: #7df07d;
+}
+body.modo-oscuro .casita {
+  filter: brightness(0.8);
+}
+/* Menú desplegable en modo oscuro */
+body.modo-oscuro .menu-desplegable {
+    background-color: #1b1b1b; /* fondo oscuro */
+    border: 1px solid #333;    /* borde más visible */
+}
+
+/* Enlaces dentro del menú en modo oscuro */
+body.modo-oscuro .menu-desplegable a,
+body.modo-oscuro .menu-desplegable button {
+    color: #fff;              /* texto blanco */
+    background-color: transparent;
+}
+
+/* Efecto hover en modo oscuro */
+body.modo-oscuro .menu-desplegable a:hover,
+body.modo-oscuro .menu-desplegable button:hover {
+    background-color: #333;
+    color: #9affb0;           /* resaltado verde */
+}
+
+/* ======== BOTÓN INICIAR SESIÓN EN MENÚ HAMBURGUESA ======== */
+.btn-login-menu {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login-menu:hover {
+  background-color: #e65c00;
+  transform: translateY(-1px);
+}
+
+/* 🔹 En modo oscuro */
+body.modo-oscuro .btn-login-menu {
+  background-color: #ff8533;
+  color: #1b1b1b;
+}
+
+body.modo-oscuro .btn-login-menu:hover {
+  background-color: #ffa366;
+}
+
+
+/* ======== ENLACE "INICIAR SESIÓN" DEL MENÚ ======== */
+.menu-desplegable .login-link {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-desplegable .login-link:hover {
+  background-color: #e65c00;
+  transform: translateY(-2px);
+}
+
+/* 🔹 En modo oscuro */
+body.modo-oscuro .menu-desplegable .login-link {
+  background-color: #ff8533;
+  color: #1b1b1b;
+}
+
+body.modo-oscuro .menu-desplegable .login-link:hover {
+  background-color: #ffa366;
+}
+/* =========================================
+   ESTILOS BUSCADOR EN VIVO (PROPORCIONAL Y COMPACTO)
+   ========================================= */
+
+/* 1. AJUSTE DEL CONTENEDOR PRINCIPAL */
+.buscador-contenedor {
+    display: flex;
+    justify-content: center;
+    /* El cambio clave: ajusta el ancho al contenido (input + botón) */
+    width: fit-content; 
+    margin: 6px auto; /* Centrado horizontalmente */
+    position: relative; /* Referencia para la lista absoluta */
+}
+
+/* 2. LISTA DE RESULTADOS */
+.resultados-busqueda {
+    position: absolute;
+    top: 100%; /* Justo debajo */
+    left: 0;
+    width: 100%; /* Ocupa exactamente el ancho del .buscador-contenedor */
+    background: #fff;
+    border: 1px solid #b3e6c9; /* Borde verde suave */
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+    box-sizing: border-box; /* Evita que el borde rompa el ancho */
+}
+
+/* 3. ITEMS (FILAS) COMPACTOS */
+.item-resultado {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px; /* Espacio reducido */
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+}
+
+.item-resultado:last-child {
+    border-bottom: none;
+}
+
+.item-resultado:hover {
+    background-color: #e3f0ff;
+}
+
+/* 4. MINIATURAS */
+.img-mini {
+    width: 28px;        /* Tamaño muy pequeño */
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%; /* Redondeada */
+    margin-right: 8px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;     /* Evita que la imagen se aplaste */
+}
+
+/* 5. TEXTOS */
+.info-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+    overflow: hidden; /* Necesario para el efecto de puntos suspensivos */
+}
+
+.nombre-mini {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1px;
+    /* Truco para cortar texto largo con "..." */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px; /* Ajusta esto si quieres que corte antes o después */
+}
+
+.precio-mini {
+    font-size: 11px;
+    color: #1c692e;
+    font-weight: bold;
+}
+
+/* --- AJUSTES MODO OSCURO --- */
+body.modo-oscuro .resultados-busqueda {
+    background: #222;
+    border-color: #444;
+}
+body.modo-oscuro .item-resultado {
+    border-bottom: 1px solid #333;
+}
+body.modo-oscuro .item-resultado:hover {
+    background-color: #333;
+}
+body.modo-oscuro .nombre-mini {
+    color: #eee;
+}
+body.modo-oscuro .img-mini {
+    border-color: #555;
+}

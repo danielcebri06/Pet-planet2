@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Pet Planet</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="contenedor-form">
+    <h2>Crear cuenta</h2>
+    <form action="registrar.php" method="POST">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="contrasena">Contraseña:</label>
+      <div class="campo-password">
+        <input type="password" id="contrasena" name="contrasena" required>
+        <span id="togglePassword" class="ojo">👁️</span>
+      </div>
+      <p id="seguridadContrasena"></p>
+
+      <button type="submit">Registrar</button>
+      <p id="mensaje"></p>
+    </form>
+
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+  </div>
+
+  <script>
+  const inputPass = document.getElementById("contrasena");
+  const toggle = document.getElementById("togglePassword");
+  const indicador = document.getElementById("seguridadContrasena");
+
+  // Mostrar / ocultar contraseña
+  toggle.addEventListener("click", () => {
+    const tipo = inputPass.getAttribute("type") === "password" ? "text" : "password";
+    inputPass.setAttribute("type", tipo);
+    toggle.textContent = tipo === "password" ? "👁️" : "🙈";
+  });
+
+  // Medidor de seguridad
+  inputPass.addEventListener("input", () => {
+    const valor = inputPass.value;
+    let seguridad = 0;
+    if (valor.length >= 8) seguridad++;
+    if (/[A-Z]/.test(valor)) seguridad++;
+    if (/[0-9]/.test(valor)) seguridad++;
+    if (/[@$!%*?&]/.test(valor)) seguridad++;
+
+    if (valor.length === 0) {
+      indicador.textContent = "";
+      indicador.className = "";
+    } else if (seguridad <= 1) {
+      indicador.textContent = "Contraseña débil";
+      indicador.className = "seguridad-debil";
+    } else if (seguridad === 2 || seguridad === 3) {
+      indicador.textContent = "Contraseña media";
+      indicador.className = "seguridad-media";
+    } else {
+      indicador.textContent = "Contraseña fuerte";
+      indicador.className = "seguridad-fuerte";
+    }
+  });
+  </script>
+</body>
+</html>
