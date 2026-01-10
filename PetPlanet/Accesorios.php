@@ -26,6 +26,7 @@ session_start();
         <a class="claseseleccionada" href="Accesorios.php">Accesorios</a>
         <a href="alimentacion.php">Alimentación</a>
         <a href="SaludEHigiene.php">Salud e higiene</a>
+        <a href="Adopciones.php">Adopta a una Mascota</a>
         <a href="https://search.brave.com/search?q=kiwoko&view=full&map_src=c&bbox=-3.710%2C40.381%2C-3.480%2C40.551" target="_blank">Nuestras Tiendas</a>
       </nav>
       <div class="menu-hamburguesa">
