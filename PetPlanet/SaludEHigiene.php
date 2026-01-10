@@ -57,8 +57,30 @@ session_start();
     <section class="productos">
         <h1>Salud e higiene para mascotas</h1>
         <p>Productos para salud e higiene.</p>
+          
+        <!--buscador y filtros-->  
+        <div class="filtros filtros-adopcion" data-filtros>
+        <input type="text" class="filtro-texto" data-filter="q" placeholder="Buscar por nombre...">
+
+        <select class="filtro-select" data-filter="tipo">
+            <option value="" disabled selected>Filtrar por tipo de mascota</option>
+            <option value="todos">Todos</option>
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+            <option value="pajaro">Pájaro</option>
+        </select>
+
+        <select class="filtro-select" data-filter="limite precio">
+            <option value="" disabled selected>Filtrar por precio</option>
+            <option value="todos">Sin limite</option>
+            <option value="10">10€</option>
+            <option value="15">15€</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+
         <div class="productos-lista">
-            <div class="producto" data-nombre="Champú para perros" data-precio="8.99€" data-descripcion="Champú suave." data-imagen="champu perro.webp">
+            <div class="producto" data-tipo="perro" data-nombre="Champú para perros" data-precio="8.99€" data-descripcion="Champú suave." data-imagen="champu perro.webp">
                 <img src="imagenes/champu perro.webp" alt="Champú">
                 <div class="oferta-tag">¡OFERTA!</div>
                 <h2>Champú para perros</h2>
@@ -66,13 +88,13 @@ session_start();
                 <p class="precio-oferta">8.99€</p>
                 <button class="btn-comprar">Comprar</button>
             </div>
-            <div class="producto" data-nombre="Cepillo de dientes para gatos" data-precio="13.00€" data-descripcion="Cepillo dental." data-imagen="Cepillo Gatos.webp">
+            <div class="producto" data-tipo="gato" data-nombre="Cepillo de dientes para gatos" data-precio="13.00€" data-descripcion="Cepillo dental." data-imagen="Cepillo Gatos.webp">
                 <img src="imagenes/Cepillo Gatos.webp" alt="Cepillo">
                 <h2>Cepillo de dientes</h2>
                 <p>Precio: 13.00€</p>
                 <button class="btn-comprar">Comprar</button>
             </div>
-            <div class="producto" data-nombre="Arena para pájaros" data-precio="18.50€" data-descripcion="Arena especial." data-imagen="arena pajaro.jpg">
+            <div class="producto" data-tipo="pajaro" data-nombre="Arena para pájaros" data-precio="18.50€" data-descripcion="Arena especial." data-imagen="arena pajaro.jpg">
                 <img src="imagenes/arena pajaro.jpg" alt="Arena">
                 <div class="oferta-tag">¡OFERTA!</div>
                 <h2>Arena para pájaros</h2>
@@ -82,19 +104,19 @@ session_start();
             </div>
         </div>
         <div class="productos-lista">
-            <div class="producto" data-nombre="Limpiador de patas para perros" data-precio="16.00€" data-descripcion="Limpiador fácil." data-imagen="limpiapatas.webp">
+            <div class="producto" data-tipo="perro" data-nombre="Limpiador de patas para perros" data-precio="16.00€" data-descripcion="Limpiador fácil." data-imagen="limpiapatas.webp">
                 <img src="imagenes/limpiapatas.webp" alt="Limpiador">
                 <h2>Limpiador de patas</h2>
                 <p>Precio: 16.00€</p>
                 <button class="btn-comprar">Comprar</button>
             </div>
-            <div class="producto" data-nombre="Pasta de dientes para gatos" data-precio="9.25€" data-descripcion="Pasta dental." data-imagen="pasta de dientes.webp">
+            <div class="producto" data-tipo="gato" data-nombre="Pasta de dientes para gatos" data-precio="9.25€" data-descripcion="Pasta dental." data-imagen="pasta de dientes.webp">
                 <img src="imagenes/pasta de dientes.webp" alt="Pasta">
                 <h2>Pasta de dientes</h2>
                 <p>Precio: 9.25€</p>
                 <button class="btn-comprar">Comprar</button>
             </div>
-            <div class="producto" data-nombre="Protector hepático para pájaros" data-precio="13.20€" data-descripcion="Suplemento." data-imagen="51yux+ii4CL.webp">
+            <div class="producto" data-tipo="pajaro" data-nombre="Protector hepático para pájaros" data-precio="13.20€" data-descripcion="Suplemento." data-imagen="51yux+ii4CL.webp">
                 <img src="imagenes/51yux+ii4CL.webp" alt="Protector">
                 <h2>Protector hepático</h2>
                 <p>Precio: 13.20€</p>
@@ -114,6 +136,7 @@ session_start();
     </div>
   </footer>
 
+  <script src="js/saludEHigiene.js"></script>
   <script src="js/database.js"></script>
   <script src="js/modoOscuro.js"></script>
   <script src="js/productoModal.js"></script>
