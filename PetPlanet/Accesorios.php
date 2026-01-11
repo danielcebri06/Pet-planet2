@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-<!--hola-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,6 +10,7 @@ session_start();
   <link rel="stylesheet" href="proyecto.css">
   <link rel="stylesheet" href="ali-sal-accyjcss.css">    
   <link rel="stylesheet" href="modal.css">    
+  <link rel="stylesheet" href="filtro.css">
 </head>
 <body>
   <header>
@@ -59,8 +59,33 @@ session_start();
   <section class="productos">
     <h1>Accesorios para Mascotas</h1>
     <p>Descubre nuestra amplia variedad de accesorios.</p>
+
+        <div class="filtros filtros-adopcion" data-filtros>
+            <input type="text" class="filtro-texto" placeholder="Buscar por nombre...">
+    
+            <select id="filtro-tipo" class="filtro-select">
+                <option value="todos">Todos los animales</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="pajaro">Pájaro</option>
+            </select>
+
+            <select id="filtro-categoria" class="filtro-select">
+                <option value="todas">Todas las categorías</option>
+                <option value="juguete">Juguetes</option>
+                <option value="hogar">Hogar / Jaulas</option>
+            </select>
+        </div>
+
     <div class="productos-lista">
-      <div class="producto" data-nombre="Pelota con ruido para perros" data-precio="15.99€" data-descripcion="Pelota interactiva." data-imagen="accesorioPerro.webp">
+      
+      <div class="producto" 
+           data-tipo="perro" 
+           data-categoria="juguete"
+           data-nombre="Pelota con ruido para perros" 
+           data-precio="15.99€" 
+           data-descripcion="Pelota interactiva." 
+           data-imagen="accesorioPerro.webp">
         <img src="imagenes/accesorioPerro.webp" alt="Accesorios para perros">
         <div class="oferta-tag">¡OFERTA!</div>
         <h2>Pelota con ruido para perros</h2>
@@ -68,13 +93,27 @@ session_start();
         <p class="precio-oferta">15.99€</p>
         <button class="btn-comprar">Comprar</button>
       </div>
-      <div class="producto" data-nombre="Rascador para gatos" data-precio="20.00€" data-descripcion="Rascador de sisal." data-imagen="accesorioGato.webp">
+
+      <div class="producto" 
+           data-tipo="gato" 
+           data-categoria="hogar"
+           data-nombre="Rascador para gatos" 
+           data-precio="20.00€" 
+           data-descripcion="Rascador de sisal." 
+           data-imagen="accesorioGato.webp">
         <img src="imagenes/accesorioGato.webp" alt="Accesorios para gatos">
         <h2>Rascador para gatos</h2>
         <p>Precio: 20.00€</p>
         <button class="btn-comprar">Comprar</button>
       </div>
-      <div class="producto" data-nombre="Jaula para aves grandes" data-precio="19.99€" data-descripcion="Jaula espaciosa." data-imagen="accesorioPajaro.webp">
+
+      <div class="producto" 
+           data-tipo="pajaro" 
+           data-categoria="hogar"
+           data-nombre="Jaula para aves grandes" 
+           data-precio="19.99€" 
+           data-descripcion="Jaula espaciosa." 
+           data-imagen="accesorioPajaro.webp">
         <img src="imagenes/accesorioPajaro.webp" alt="Accesorios para aves">
         <div class="oferta-tag">¡OFERTA!</div>
         <h2>Jaula para aves grandes</h2>
@@ -82,6 +121,7 @@ session_start();
         <p class="precio-oferta">19.99€</p>
         <button class="btn-comprar">Comprar</button>
       </div>
+
     </div>
   </section>
 
@@ -102,6 +142,7 @@ session_start();
   <script src="js/buscador.js"></script>
   <script src="js/carrito.js"></script>
   
+  <script src="js/accesorios.js"></script>
   <script src="js/menu.js"></script> 
   </body>
 </html>

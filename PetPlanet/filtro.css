@@ -1,0 +1,46 @@
+/* --- Estilos para la barra de filtros Verde Oscuro --- */
+
+.filtros-adopcion {
+    background-color: #1c692e; 
+    padding: 20px;             
+    border-radius: 12px;      
+    display: flex;            
+    justify-content: center;   
+    gap: 15px;                 
+    flex-wrap: wrap;           
+    margin: 20px auto;         
+    max-width: 900px;          
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo de los Inputs y Selects dentro del filtro */
+.filtros-adopcion input, 
+.filtros-adopcion select {
+    background-color: #ffffff;
+    border: 2px solid #1c692e; 
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.filtros-adopcion select:hover,
+.filtros-adopcion input:hover {
+    background-color: #f0fdf4;
+}
+
+/* Efecto al hacer clic (Focus) */
+.filtros-adopcion input:focus, 
+.filtros-adopcion select:focus {
+    outline: none;
+    border-color: #4ade80; 
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
+}
+
+/* Ajuste específico para el buscador para que sea un poco más ancho */
+.filtro-texto {
+    min-width: 250px;
+}
