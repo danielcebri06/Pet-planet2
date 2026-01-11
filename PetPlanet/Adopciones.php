@@ -63,10 +63,9 @@ session_start();
 
         <!-- Filtros (DOM) -->
         <div class="filtros filtros-adopcion" data-filtros>
-            <input type="text" class="filtro-texto" data-filter="q" placeholder="Buscar por nombre...">
-    
+                
             <select class="filtro-select" data-filter="tipo">
-                <option value="todos">Todos</option>
+                <option value="todos">Todos los animales</option>
                 <option value="perro">Perro</option>
                 <option value="gato">Gato</option>
                 <option value="pajaro">Pájaro</option>
@@ -84,125 +83,190 @@ session_start();
         <div class="productos-lista" id="mascotas-lista">
 
             <!--PERROS-->
-            <div class="producto" data-tipo="perro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Toy"
+                    data-tipo="perro"
+                    data-edad="adulto"
+                    data-descripcion="Cariñoso, sociable y con energía moderada."
+                    data-imagen="imagenes/perro1.jpg">
                 <img src="imagenes/perro1.jpg" alt="Toy">
                 <h2>Toy</h2>
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="perro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Tristán"
+                    data-tipo="perro"
+                    data-edad="adulto"
+                    data-descripcion="Cariñoso y juguetón, tamaño mediano. Ideal para familias activas."
+                    data-imagen="imagenes/perro2.jpg">
                 <img src="imagenes/perro2.jpg" alt="Tristán">
                 <h2>Tristán</h2>
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y juguetón, tamaño mediano. Ideal para familias activas</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="perro" data-edad="anciano">
+            <div class="producto" 
+                    data-nombre="Farru"
+                    data-tipo="perro"
+                    data-edad="anciano"
+                    data-descripcion="Poco sociable, sólo busca que le quieran."
+                    data-imagen="imagenes/perro3.jfif">
                 <img src="imagenes/perro3.jfif" alt="Farru">
                 <h2>Farru</h2>
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Anciano</p>
                 <p>Poco sociable, sólo busca que le quieran</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="perro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Pecas"
+                    data-tipo="perro"
+                    data-edad="adulto"
+                    data-descripcion="Cariñoso y sociable, ideal para familias con niños."
+                    data-imagen="imagenes/perro4.jpeg">
                 <img src="imagenes/perro4.jpeg" alt="Pecas">
                 <h2>Pecas</h2>
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="perro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Lúa"
+                    data-tipo="perro"
+                    data-edad="adulto"
+                    data-descripcion="Cariñoso, juguetón y sociable, ideal para familias con niños."
+                    data-imagen="imagenes/perro5.jfif">
                 <img src="imagenes/perro5.jfif" alt="Lua">
                 <h2>Lúa</h2>
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso, juguetón y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
 
             <!--GATOS-->
-            <div class="producto" data-tipo="gato" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Michi"
+                    data-tipo="gato"
+                    data-edad="adulto"
+                    data-descripcion="Macho capado. Casero, cariñoso y sociable."
+                    data-imagen="imagenes/gato1.png">
                 <img src="imagenes/gato1.png" alt="Michi">
                 <h2>Michi</h2>
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Macho capado. Casero, cariñoso y sociable</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="gato" data-edad="cachorro">
+            <div class="producto" 
+                    data-nombre="Tisbe"
+                    data-tipo="gato"
+                    data-edad="cachorro"
+                    data-descripcion="Cariñoso, juguetón y curioso. Tiene 3 meses."
+                    data-imagen="imagenes/gato2.webp">
                 <img src="imagenes/gato2.webp" alt="Tisbe">
                 <h2>Tisbe</h2>
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Cachorro</p>
                 <p>Cariñoso, juguetón y curioso. Tiene 3 meses</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="gato" data-edad="cachorro">
+            <div class="producto" 
+                    data-nombre="Pulga"
+                    data-tipo="gato"
+                    data-edad="cachorro"
+                    data-descripcion="Inquieto, juguetón y curioso. Tiene 3 meses."
+                    data-imagen="imagenes/gato3.jpg">
                 <img src="imagenes/gato3.jpg" alt="Pulga">
                 <h2>Pulga</h2>
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Cachorro</p>
                 <p>Inquieto, juguetón y curioso. Tiene 3 meses</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="gato" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Luna"
+                    data-tipo="gato"
+                    data-edad="adulto"
+                    data-descripcion="Asustadizo y casero."
+                    data-imagen="imagenes/gato4.jpg"> 
                 <img src="imagenes/gato4.jpg" alt="Luna">
                 <h2>Luna</h2>
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Asustadizo y casero</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="gato" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Sombra"
+                    data-tipo="gato"
+                    data-edad="adulto"
+                    data-descripcion="Juguetón y sociable."
+                    data-imagen="imagenes/gato5.jpg"> 
                 <img src="imagenes/gato5.jpg" alt="Sombra">
                 <h2>Sombra</h2>
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Juguetón y sociable</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
 
             <!--PAJAROS-->
-            <div class="producto" data-tipo="pajaro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Agapornis"
+                    data-tipo="pajaro"
+                    data-edad="adulto"
+                    data-descripcion="Agapornis en busca de pareja."
+                    data-imagen="imagenes/pajaro1.webp"> 
                 <img src="imagenes/pajaro1.webp" alt="agapornis">
                 <h2>Agapornis</h2>
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Agapornis en busca de pareja</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="pajaro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Pareja de Periquitos"
+                    data-tipo="pajaro"
+                    data-edad="adulto"
+                    data-descripcion="Pareja fieles busca de hogar."
+                    data-imagen="imagenes/pajaro2.webp"> 
                 <img src="imagenes/pajaro2.webp" alt="periquito">
                 <h2>Pareja de Periquitos</h2>
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
-                <p>Pareja fielen busca de hogar</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <p>Pareja fieles busca de hogar</p>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
-            <div class="producto" data-tipo="pajaro" data-edad="adulto">
+            <div class="producto" 
+                    data-nombre="Canarios"
+                    data-tipo="pajaro"
+                    data-edad="adulto"
+                    data-descripcion="Canario hace honor a la expresión "amarillo canario"."
+                    data-imagen="imagenes/pajaro3.jpg"> 
                 <img src="imagenes/pajaro3.jpg" alt="Canario">
                 <h2>Canario</h2>
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Canario hace honor a la expresión "amarillo canario"</p>
-                <button class="btn-reservar">Ver ficha</button>
+                <button class="btn-reservar" type="button">Reservar</button>
             </div>
 
         </div>
@@ -217,15 +281,7 @@ session_start();
                 <p id="modalDescripcion"></p>
                 <p><strong>Tipo:</strong> <span id="modalTipo"></span></p>
                 <p><strong>Edad:</strong> <span id="modalEdad"></span></p>
-                <button class="btn-cesta" id="btnReservar">Reservar adopción</button>
-            </div>
-            <div class="comentarios-seccion">
-                <h3>Comentarios</h3>
-                <div id="listaComentarios" class="lista-comentarios"></div>
-                <div class="nuevo-comentario">
-                    <textarea id="comentarioTexto"></textarea>
-                    <button id="btnEnviarComentario">💬 Enviar</button>
-                </div>
+                <button class="btn-reservar" id="btnReservar">Reservar adopción</button>
             </div>
         </div>
     </div>
@@ -241,10 +297,10 @@ session_start();
 
   <script src="js/database.js"></script>
   <script src="js/modoOscuro.js"></script>
-  <!--<script src="js/productoModal.js"></script>   
+  <script src="js/adopcionModal.js"></script>   
   <script src="js/buscador.js"></script>
-  <script src="js/carrito.js"></script>-->
-  <script src="js/adopciones.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/adopociones.js"></script>
   <script src="js/menu.js"></script> 
 </body>
 </html>
