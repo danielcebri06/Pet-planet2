@@ -10,7 +10,8 @@ session_start();
   <title>Adopciones - PET PLANET</title>
   <link rel="stylesheet" href="proyecto.css">
   <link rel="stylesheet" href="ali-sal-accyjcss.css">    
-  <link rel="stylesheet" href="modal.css">    
+  <link rel="stylesheet" href="modal.css"> 
+  <link rel="stylesheet" href="filtro.css">   
 </head>
 <body>
   <header>
