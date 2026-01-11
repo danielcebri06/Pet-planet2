@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = Array.from(lista.querySelectorAll(".producto"));  /*obtenemos las tarjetas a filtrar .producto
     quereySelectorAll devuelve los nodos */
 
-    const controles = Array.from(filtrosBox.querySelectorAll("[data-filter"));
+    const controles = Array.from(filtrosBox.querySelectorAll("[data-filter]"));
 
     function aplicarFiltros(){
         let textoBusqueda ="";
