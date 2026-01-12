@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // 1. Obtener los selectores por su ID (Ya no buscamos el buscador de texto)
+    // 1. Obtener los selectores por su ID 
     const selectorTipo = document.getElementById('filtro-tipo');
     const selectorPrecio = document.getElementById('filtro-precio');
     const productos = document.querySelectorAll('.producto');
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const tipoProducto = producto.getAttribute('data-tipo');
             
             // PRECIO: Lo convertimos a número decimal (float) 
-            // En tu PHP el data-precio ya es "8.99", no hace falta .replace()
             const precioProducto = parseFloat(producto.getAttribute('data-precio'));
 
             // CONDICIÓN 1: Tipo de animal
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // CONDICIÓN 2: Precio (Menor o igual al límite)
             let esPrecioCorrecto = true;
             if (precioMaximoSeleccionado !== "todos") {
-                // Convertimos el límite de la casilla a número entero (int) como pediste
+                // Convertimos el límite de la casilla a número entero (int) 
                 const limite = parseInt(precioMaximoSeleccionado);
                 esPrecioCorrecto = (precioProducto <= limite);
             }

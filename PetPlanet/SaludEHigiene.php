@@ -61,8 +61,7 @@ session_start();
         <p>Productos para salud e higiene.</p>
           
         <div class="filtros filtros-adopcion" data-filtros>
-            <input type="text" class="filtro-texto" id="buscador-nombre" placeholder="Buscar por nombre...">
-
+           
             <select class="filtro-select" id="filtro-tipo">
                 <option value="todos">Todos los animales</option>
                 <option value="perro">Perro</option>
