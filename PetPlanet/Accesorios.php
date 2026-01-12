@@ -94,18 +94,9 @@ session_start();
         <button class="btn-comprar">Comprar</button>
       </div>
 
-      <div class="producto" 
-           data-tipo="gato" 
-           data-categoria="hogar"
-           data-nombre="Rascador para gatos" 
-           data-precio="20.00€" 
-           data-descripcion="Rascador de sisal." 
-           data-imagen="accesorioGato.webp">
-        <img src="imagenes/accesorioGato.webp" alt="Accesorios para gatos">
-        <h2>Rascador para gatos</h2>
-        <p>Precio: 20.00€</p>
-        <button class="btn-comprar">Comprar</button>
-      </div>
+  
+
+
 
       <div class="producto" 
            data-tipo="pajaro" 
@@ -122,6 +113,80 @@ session_start();
         <button class="btn-comprar">Comprar</button>
       </div>
 
+         <div class="producto" 
+           data-tipo="perro" 
+           data-categoria="hogar"
+           data-nombre="cama para perros medianos" 
+           data-precio="19.99€" 
+           data-descripcion="Cama acolchada para perros pequeños o medianos." 
+           data-imagen="camaPerro2.webp">
+        <img src="imagenes/camaPerro2.webp" alt="Accesorios para perros">
+        <h2>Cama de perro mediano</h2>
+        <p>Precio: 25.00€</p>
+        <button class="btn-comprar">Comprar</button>
+      </div>
+
+    </div>
+
+    <div class="productos-lista">
+
+           <div class="producto" 
+           data-tipo="perro" 
+           data-categoria="juguete"
+           data-nombre="Correa de perro para el coche" 
+           data-precio="7.99€" 
+           data-descripcion="Correa ajustable para coche." 
+           data-imagen="correaPerro2.webp">
+        <img src="imagenes/correaPerro2.webp" alt="Accesorios para perros">
+        <div class="oferta-tag">¡OFERTA!</div>
+        <h2>Pelota con ruido para perros</h2>
+        <p class="precio-original">15.99€</p>
+        <p class="precio-oferta">7.99€</p>
+        <button class="btn-comprar">Comprar</button>
+      </div>
+
+            <div class="producto" 
+           data-tipo="gato" 
+           data-categoria="hogar"
+           data-nombre="Rascador para gatos" 
+           data-precio="20.00€" 
+           data-descripcion="Rascador de sisal." 
+           data-imagen="accesorioGato.webp">
+        <img src="imagenes/accesorioGato.webp" alt="Accesorios para gatos">
+        <h2>Rascador para gatos</h2>
+        <p>Precio: 20.00€</p>
+        <button class="btn-comprar">Comprar</button>
+      </div>
+
+                <div class="producto" 
+           data-tipo="pajaro" 
+           data-categoria="hogar"
+           data-nombre="Juguete para jaula" 
+           data-precio="20.00€" 
+           data-descripcion="Juguete para aves grandes." 
+           data-imagen="jugueteAve.webp">
+        <img src="imagenes/jugueteAve.webp" alt="Accesorios para pajaros">
+        <h2>Juguete para aves.</h2>
+        <p>Precio: 20.00€</p>
+        <button class="btn-comprar">Comprar</button>
+      </div>
+
+
+    </div>
+    <div class="productos-lista">
+
+            <div class="producto" 
+           data-tipo="gato" 
+           data-categoria="hogar"
+           data-nombre="Transportin para gatos" 
+           data-precio="20.00€" 
+           data-descripcion="Transportín mediano para gatos." 
+           data-imagen="transportinGato.webp">
+        <img src="imagenes/transportinGato.webp" alt="Accesorios para gatos">
+        <h2>Transportin para gatos.</h2>
+        <p>Precio: 20.00€</p>
+        <button class="btn-comprar">Comprar</button>
+      </div>
     </div>
   </section>
 
