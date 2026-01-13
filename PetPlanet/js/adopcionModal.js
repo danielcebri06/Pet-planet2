@@ -13,17 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTipo = document.getElementById("modalTipo");
   const modalEdad = document.getElementById("modalEdad");
 
-  // 3) Botón reservar (presentación)
+  // 3) Botón reservar adopción(presentación)
   const btnReservar = document.getElementById("btnReservar");
+
+
 
   let mascotaActual = null;
 
   // 4) Abrir modal al hacer click en la imagen de una tarjeta
   document.addEventListener("click", (e) => {
-    const img = e.target.closest(".producto img");
-    if (!img) return;
+    // Si se pulsamos el botón "Reservar" de la tarjeta
+    const btnTarjeta = e.target.closest(".btn-reservar-tarjeta");
 
-    const card = img.closest(".producto");
+    // Si se pulsamos la imagen de la tarjeta
+    const img = e.target.closest(".producto img");
+
+    // Si no es ni botón ni imagen, no hacemos nada
+    if (!btnTarjeta && !img) return;
+
+     // Encontramos la tarjeta (.producto) desde cualquiera de los dos
+    const card = (btnTarjeta || img).closest(".producto");
     if (!card) return;
 
     // Guardamos la mascota seleccionada (leemos data-* del HTML)
@@ -61,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.style.display = "none";
   });
 
-  // 7) Botón reservar (por ahora: solo placeholder)
+  // 7) Botón reservar adopción (por ahora: solo placeholder)
   btnReservar?.addEventListener("click", () => {
-    // Aquí en el futuro llamarás a tu sistema de reservas
+    // Aquí llamaré al sistema de reservas
     alert("Reserva pendiente de implementar ✅");
     modal.style.display = "none";
   });
