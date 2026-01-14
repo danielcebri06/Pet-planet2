@@ -61,7 +61,6 @@ session_start();
     <p>Descubre nuestra amplia variedad de accesorios.</p>
 
         <div class="filtros filtros-adopcion" data-filtros>
-            <input type="text" class="filtro-texto" placeholder="Buscar por nombre...">
     
             <select id="filtro-tipo" class="filtro-select">
                 <option value="todos">Todos los animales</option>
@@ -126,9 +125,7 @@ session_start();
         <button class="btn-comprar">Comprar</button>
       </div>
 
-    </div>
 
-    <div class="productos-lista">
 
            <div class="producto" 
            data-tipo="perro" 
@@ -139,7 +136,7 @@ session_start();
            data-imagen="correaPerro2.webp">
         <img src="imagenes/correaPerro2.webp" alt="Accesorios para perros">
         <div class="oferta-tag">¡OFERTA!</div>
-        <h2>Pelota con ruido para perros</h2>
+        <h2>Correa de perro para coche</h2>
         <p class="precio-original">15.99€</p>
         <p class="precio-oferta">7.99€</p>
         <button class="btn-comprar">Comprar</button>
@@ -147,7 +144,7 @@ session_start();
 
             <div class="producto" 
            data-tipo="gato" 
-           data-categoria="hogar"
+           data-categoria="juguete"
            data-nombre="Rascador para gatos" 
            data-precio="20.00€" 
            data-descripcion="Rascador de sisal." 
@@ -172,18 +169,16 @@ session_start();
       </div>
 
 
-    </div>
-    <div class="productos-lista">
 
             <div class="producto" 
            data-tipo="gato" 
            data-categoria="hogar"
-           data-nombre="Transportin para gatos" 
+           data-nombre="Transportín para gatos" 
            data-precio="20.00€" 
            data-descripcion="Transportín mediano para gatos." 
            data-imagen="transportinGato.webp">
         <img src="imagenes/transportinGato.webp" alt="Accesorios para gatos">
-        <h2>Transportin para gatos.</h2>
+        <h2>Transportín para gatos.</h2>
         <p>Precio: 20.00€</p>
         <button class="btn-comprar">Comprar</button>
       </div>

@@ -63,7 +63,7 @@ session_start();
   <section class="banner">
     <h1>Todo para tu mascota</h1>
     <p>Encuentra los mejores productos y ofertas para perros, gatos y pájaros.</p>
-    <a href="Ofertas.php">Adopta a un pau</a>
+    <a href="Ofertas.php">Ver ofertas</a>
   </section>
 
   <section class="productos-destacados">
