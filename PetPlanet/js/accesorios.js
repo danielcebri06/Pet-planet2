@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Mostrar u ocultar
             if (esTipoCorrecto && esCategoriaCorrecta) {
-                producto.style.display = 'block'; 
+                producto.style.display = ''; 
             } else {
                 producto.style.display = 'none';
             }
