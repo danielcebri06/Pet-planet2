@@ -100,8 +100,8 @@ session_start();
                 <p class="precio-oferta">18.50€</p>
                 <button class="btn-comprar">Comprar</button>
             </div>
-        </div>
-        <div class="productos-lista">
+        
+        
             <div class="producto" data-tipo="perro" data-nombre="Limpiador de patas para perros" data-precio="16.00" data-descripcion="Limpiador fácil." data-imagen="limpiapatas.webp">
                 <img src="imagenes/limpiapatas.webp" alt="Limpiador">
                 <h2>Limpiador de patas</h2>

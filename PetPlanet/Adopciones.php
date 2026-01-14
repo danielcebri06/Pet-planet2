@@ -94,7 +94,7 @@ session_start();
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -108,7 +108,7 @@ session_start();
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y juguetón, tamaño mediano. Ideal para familias activas</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -122,7 +122,7 @@ session_start();
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Anciano</p>
                 <p>Poco sociable, sólo busca que le quieran</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -136,7 +136,7 @@ session_start();
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -150,7 +150,7 @@ session_start();
                 <p><strong>Tipo:</strong>Perro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Cariñoso, juguetón y sociable, ideal para familias con niños</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
 
@@ -166,7 +166,7 @@ session_start();
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Macho capado. Casero, cariñoso y sociable</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -180,7 +180,7 @@ session_start();
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Cachorro</p>
                 <p>Cariñoso, juguetón y curioso. Tiene 3 meses</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -194,7 +194,7 @@ session_start();
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Cachorro</p>
                 <p>Inquieto, juguetón y curioso. Tiene 3 meses</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -208,7 +208,7 @@ session_start();
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Asustadizo y casero</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -222,7 +222,7 @@ session_start();
                 <p><strong>Tipo:</strong>Gato</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Juguetón y sociable</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
 
@@ -238,7 +238,7 @@ session_start();
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Agapornis en busca de pareja</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
@@ -252,21 +252,21 @@ session_start();
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Pareja fieles busca de hogar</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
             <div class="producto" 
                     data-nombre="Canarios"
                     data-tipo="pajaro"
                     data-edad="adulto"
-                    data-descripcion="Canario hace honor a la expresión "amarillo canario"."
+                    data-descripcion="Canario hace honor a la expresión amarillo canario."
                     data-imagen="imagenes/pajaro3.jpg"> 
                 <img src="imagenes/pajaro3.jpg" alt="Canario">
                 <h2>Canario</h2>
                 <p><strong>Tipo:</strong>Pájaro</p>
                 <p><strong>Edad:</strong>Adulto</p>
                 <p>Canario hace honor a la expresión "amarillo canario"</p>
-                <button class="btn-reservar" type="button">Reservar</button>
+                <button class="btn-reservar-tarjeta" type="button">Reservar</button>
             </div>
 
         </div>
@@ -281,7 +281,7 @@ session_start();
                 <p id="modalDescripcion"></p>
                 <p><strong>Tipo:</strong> <span id="modalTipo"></span></p>
                 <p><strong>Edad:</strong> <span id="modalEdad"></span></p>
-                <button class="btn-reservar" id="btnReservar">Reservar adopción</button>
+                <button class="btn-reservado" id="btnReservar">Reservar adopción</button>
             </div>
         </div>
     </div>
