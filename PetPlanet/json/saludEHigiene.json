@@ -1,0 +1,68 @@
+
+    {
+  "categoria": "Salud e Higiene",
+  "descripcion": "Productos para salud e higiene para mascotas",
+  "productos": [
+    {
+      "id": 1,
+      "tipo": "perro",
+      "nombre": "Champú para perros",
+      "precio_original": 12.01,
+      "precio_oferta": 8.99,
+      "oferta": true,
+      "descripcion": "Champú suave.",
+      "imagen": "champu perro.webp"
+    },
+    {
+      "id": 2,
+      "tipo": "gato",
+      "nombre": "Cepillo de dientes para gatos",
+      "precio_original": 13.00,
+      "precio_oferta": 13.00,
+      "oferta": false,
+      "descripcion": "Cepillo dental.",
+      "imagen": "Cepillo Gatos.webp"
+    },
+    {
+      "id": 3,
+      "tipo": "pajaro",
+      "nombre": "Arena para pájaros",
+      "precio_original": 23.00,
+      "precio_oferta": 18.50,
+      "oferta": true,
+      "descripcion": "Arena especial.",
+      "imagen": "arena pajaro.jpg"
+    },
+    {
+      "id": 4,
+      "tipo": "perro",
+      "nombre": "Limpiador de patas para perros",
+      "precio_original": 16.00,
+      "precio_oferta": 16.00,
+      "oferta": false,
+      "descripcion": "Limpiador fácil.",
+      "imagen": "limpiapatas.webp"
+    },
+    {
+      "id": 5,
+      "tipo": "gato",
+      "nombre": "Pasta de dientes para gatos",
+      "precio_original": 9.25,
+      "precio_oferta": 9.25,
+      "oferta": false,
+      "descripcion": "Pasta dental.",
+      "imagen": "pasta de dientes.webp"
+    },
+    {
+      "id": 6,
+      "tipo": "pajaro",
+      "nombre": "Protector hepático para pájaros",
+      "precio_original": 13.20,
+      "precio_oferta": 13.20,
+      "oferta": false,
+      "descripcion": "Suplemento.",
+      "imagen": "51yux+ii4CL.webp"
+    }
+  ]
+}
+
