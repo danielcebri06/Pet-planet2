@@ -1,11 +1,30 @@
+/**
+ * Lógica de Salud e Higiene - Pet Planet
+ * Incluye: Filtrado dinámico y efectos de Confeti
+ */
+
+// 1. Función Global de Confeti con Z-Index corregido para ali-sal-accyjcss.css
+function lanzarConfeti() {
+    if (typeof confetti === 'function') {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            zIndex: 999999, // Supera el position:relative de tus .producto
+            colors: ['#1c692e', '#ad8d17', '#ff4444'] // Colores corporativos (Verde, Dorado, Rojo oferta)
+        });
+    } else {
+        console.error("Librería canvas-confetti no detectada.");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
-    // 1. Obtener los selectores por su ID 
+    // Selectores
     const selectorTipo = document.getElementById('filtro-tipo');
     const selectorPrecio = document.getElementById('filtro-precio');
     const productos = document.querySelectorAll('.producto');
 
-    // Comprobación de seguridad: si no existen los filtros, no ejecutar nada
     if (!selectorTipo || !selectorPrecio) return;
 
     // 2. Función de filtrado
@@ -13,38 +32,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const tipoElegido = selectorTipo.value;
         const precioMaximoSeleccionado = selectorPrecio.value;
 
+        // Lanzar confeti al cambiar cualquier filtro
+        lanzarConfeti();
+
         productos.forEach(function(producto) {
-            // Obtener el tipo
             const tipoProducto = producto.getAttribute('data-tipo');
-            
-            // PRECIO: Lo convertimos a número decimal (float) 
             const precioProducto = parseFloat(producto.getAttribute('data-precio'));
 
-            // CONDICIÓN 1: Tipo de animal
             const esTipoCorrecto = (tipoElegido === 'todos' || tipoElegido === tipoProducto);
-
-            // CONDICIÓN 2: Precio (Menor o igual al límite)
+            
             let esPrecioCorrecto = true;
             if (precioMaximoSeleccionado !== "todos") {
-                // Convertimos el límite de la casilla a número entero (int) 
                 const limite = parseInt(precioMaximoSeleccionado);
                 esPrecioCorrecto = (precioProducto <= limite);
             }
 
-            // MOSTRAR U OCULTAR
+            // Aplicar visibilidad
             if (esTipoCorrecto && esPrecioCorrecto) {
-                // Usamos '' en lugar de 'block' para que respete el flexbox/grid original del CSS
-                producto.style.display = ''; 
+                producto.style.display = 'flex'; // Usamos flex por tu ali-sal.css
             } else {
                 producto.style.display = 'none';
             }
         });
     }
 
-    // 3. Activar el filtro al cambiar las opciones
+    // 3. Escuchadores de eventos para Filtros
     selectorTipo.addEventListener('change', filtrarProductos);
     selectorPrecio.addEventListener('change', filtrarProductos);
 
-    // Ejecutar al inicio para asegurar que la vista sea correcta
-    filtrarProductos();
+    // 4. Delegación de eventos para botones (Compra y Cesta)
+    // Esto asegura que funcione aunque el modal modifique el DOM
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-comprar') || 
+            event.target.classList.contains('btn-cesta')) {
+            lanzarConfeti();
+        }
+    });
+
+    // Estado inicial: mostrar todos sin lanzar confeti al cargar
+    productos.forEach(p => p.style.display = 'flex');
 });

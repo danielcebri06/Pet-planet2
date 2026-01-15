@@ -10,7 +10,7 @@ session_start();
     <link rel="stylesheet" href="proyecto.css">
     <link rel="stylesheet" href="ali-sal-accyjcss.css">
     <link rel="stylesheet" href="modal.css">
-    <link rel="stylesheet" href="filtro.css">   
+    <link rel="stylesheet" href="filtro.css">  
 </head>
 <body>
     <header>
@@ -62,7 +62,7 @@ session_start();
           
         <div class="filtros filtros-adopcion" data-filtros>
            
-            <select class="filtro-select" id="filtro-tipo">
+            <select class="filtro-select"  id="filtro-tipo">
                 <option value="todos">Todos los animales</option>
                 <option value="perro">Perro</option>
                 <option value="gato">Gato</option>
@@ -132,14 +132,16 @@ session_start();
     <div class="legales">
         <a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a> | <a href="#">Política de Cookies</a>
     </div>
-  </footer>
+ </footer>
 
-  <script src="js/saludEHigiene.js"></script>
-  <script src="js/database.js"></script>
-  <script src="js/modoOscuro.js"></script>
-  <script src="js/productoModal.js"></script>
-  <script src="js/buscador.js"></script>
-  <script src="js/carrito.js"></script>
-  <script src="js/menu.js"></script> 
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script src="js/saludEHigiene.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/modoOscuro.js"></script>
+    <script src="js/productoModal.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/menu.js"></script> 
+</body>
 </html>
