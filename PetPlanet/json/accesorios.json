@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pelota con ruido para perros",
+    "tipo": "perro",
+    "categoria": "juguete",
+    "precio_original": 20.00,
+    "precio_oferta": 15.99,
+    "descripcion": "Pelota interactiva.",
+    "imagen": "accesorioPerro.webp",
+    "en_oferta": true
+  },
+  {
+    "id": 2,
+    "nombre": "Jaula para aves grandes",
+    "tipo": "pajaro",
+    "categoria": "hogar",
+    "precio_original": 25.00,
+    "precio_oferta": 19.99,
+    "descripcion": "Jaula espaciosa.",
+    "imagen": "accesorioPajaro.webp",
+    "en_oferta": true
+  },
+  {
+    "id": 3,
+    "nombre": "cama para perros medianos",
+    "tipo": "perro",
+    "categoria": "hogar",
+    "precio_original": 19.99,
+    "precio_oferta": null,
+    "descripcion": "Cama acolchada para perros pequeños o medianos.",
+    "imagen": "camaPerro2.webp",
+    "en_oferta": false
+  },
+  {
+    "id": 4,
+    "nombre": "Correa de perro para el coche",
+    "tipo": "perro",
+    "categoria": "juguete",
+    "precio_original": 15.99,
+    "precio_oferta": 7.99,
+    "descripcion": "Correa ajustable para coche.",
+    "imagen": "correaPerro2.webp",
+    "en_oferta": true
+  },
+  {
+    "id": 5,
+    "nombre": "Rascador para gatos",
+    "tipo": "gato",
+    "categoria": "juguete",
+    "precio_original": 20.00,
+    "precio_oferta": null,
+    "descripcion": "Rascador de sisal.",
+    "imagen": "accesorioGato.webp",
+    "en_oferta": false
+  },
+  {
+    "id": 6,
+    "nombre": "Juguete para jaula",
+    "tipo": "pajaro",
+    "categoria": "hogar",
+    "precio_original": 20.00,
+    "precio_oferta": null,
+    "descripcion": "Juguete para aves grandes.",
+    "imagen": "jugueteAve.webp",
+    "en_oferta": false
+  },
+  {
+    "id": 7,
+    "nombre": "Transportín para gatos",
+    "tipo": "gato",
+    "categoria": "hogar",
+    "precio_original": 20.00,
+    "precio_oferta": null,
+    "descripcion": "Transportín mediano para gatos.",
+    "imagen": "transportinGato.webp",
+    "en_oferta": false
+  }
+]
