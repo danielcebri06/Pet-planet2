@@ -1,39 +1,64 @@
 /**
  * Lógica de Salud e Higiene - Pet Planet
- * Incluye: Filtrado dinámico y efectos de Confeti
+ * Actualizada para garantizar Confeti en botones
  */
 
-// 1. Función Global de Confeti con Z-Index corregido para ali-sal-accyjcss.css
+// 1. Función Global de Confeti
 function lanzarConfeti() {
+    // Verificamos si la librería cargó correctamente
     if (typeof confetti === 'function') {
+        
+        // Efecto 1: Disparo central
         confetti({
-            particleCount: 150,
-            spread: 70,
+            particleCount: 1000,
+            spread: 1000,
             origin: { y: 0.6 },
-            zIndex: 999999, // Supera el position:relative de tus .producto
-            colors: ['#1c692e', '#ad8d17', '#ff4444'] // Colores corporativos (Verde, Dorado, Rojo oferta)
+            zIndex: 9999999, // Z-Index muy alto para que salga ENCIMA del modal
+            colors: ['#1c692e', '#ad8d17', '#ff4444'] 
         });
+
+        // Efecto 2: Pequeños disparos laterales (opcional, para más fiesta)
+        setTimeout(() => {
+            confetti({
+                particleCount: 1000,
+                angle: 60,
+                spread: 500,
+                origin: { x: 0 },
+                zIndex: 9999999
+            });
+            
+        }, 200);
+        setTimeout(() => {
+        confetti({
+                particleCount: 1000,
+                angle: 120,
+                spread: 500,
+                origin: { x: 1 },
+                zIndex: 9999999
+            });
+            }, 400);
+
     } else {
-        console.error("Librería canvas-confetti no detectada.");
+        console.warn("La librería canvas-confetti no se ha cargado aún.");
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Selectores
+    // Selectores de filtros
     const selectorTipo = document.getElementById('filtro-tipo');
     const selectorPrecio = document.getElementById('filtro-precio');
     const productos = document.querySelectorAll('.producto');
 
-    if (!selectorTipo || !selectorPrecio) return;
-
     // 2. Función de filtrado
     function filtrarProductos() {
+        if (!selectorTipo || !selectorPrecio) return;
+
         const tipoElegido = selectorTipo.value;
         const precioMaximoSeleccionado = selectorPrecio.value;
 
-        // Lanzar confeti al cambiar cualquier filtro
-        lanzarConfeti();
+        // Opcional: Si quieres confeti al filtrar, descomenta la siguiente línea
+        // lanzarConfeti(); 
 
         productos.forEach(function(producto) {
             const tipoProducto = producto.getAttribute('data-tipo');
@@ -47,28 +72,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 esPrecioCorrecto = (precioProducto <= limite);
             }
 
-            // Aplicar visibilidad
             if (esTipoCorrecto && esPrecioCorrecto) {
-                producto.style.display = 'flex'; // Usamos flex por tu ali-sal.css
+                producto.style.display = 'flex'; 
             } else {
                 producto.style.display = 'none';
             }
         });
     }
 
-    // 3. Escuchadores de eventos para Filtros
-    selectorTipo.addEventListener('change', filtrarProductos);
-    selectorPrecio.addEventListener('change', filtrarProductos);
+    // Escuchadores para filtros
+    if(selectorTipo) selectorTipo.addEventListener('change', filtrarProductos);
+    if(selectorPrecio) selectorPrecio.addEventListener('change', filtrarProductos);
 
-    // 4. Delegación de eventos para botones (Compra y Cesta)
-    // Esto asegura que funcione aunque el modal modifique el DOM
-    document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('btn-comprar') || 
-            event.target.classList.contains('btn-cesta')) {
-            lanzarConfeti();
-        }
-    });
-
-    // Estado inicial: mostrar todos sin lanzar confeti al cargar
+    // Estado inicial
     productos.forEach(p => p.style.display = 'flex');
 });
+
+/**
+ * 3. DETECTOR DE CLICS GLOBAL (Fuera del DOMContentLoaded)
+ * Usamos {capture: true} para asegurar que detectamos el clic ANTES 
+ * que el modal o el carrito detengan la propagación.
+ */
+document.addEventListener('click', function(event) {
+    // Verifica si el elemento clicado (o su padre) tiene la clase deseada
+    if (event.target.matches('.btn-comprar') || event.target.matches('.btn-cesta')) {
+        lanzarConfeti();
+    }
+}, true); // <--- El 'true' es la clave: fase de captura
