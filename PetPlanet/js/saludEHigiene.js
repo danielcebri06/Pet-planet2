@@ -11,10 +11,10 @@ function lanzarConfeti() {
         // Efecto 1: Disparo central
         confetti({
             particleCount: 1000,
-            spread: 1000,
-            origin: { y: 0.6 },
+            spread: 500,
+            origin: { y: 0.5 },
             zIndex: 9999999, // Z-Index muy alto para que salga ENCIMA del modal
-            colors: ['#1c692e', '#ad8d17', '#ff4444'] 
+            
         });
 
         // Efecto 2: Pequeños disparos laterales (opcional, para más fiesta)
@@ -24,7 +24,9 @@ function lanzarConfeti() {
                 angle: 60,
                 spread: 500,
                 origin: { x: 0 },
-                zIndex: 9999999
+                zIndex: 9999999,
+                
+              
             });
             
         }, 200);
@@ -34,7 +36,8 @@ function lanzarConfeti() {
                 angle: 120,
                 spread: 500,
                 origin: { x: 1 },
-                zIndex: 9999999
+                zIndex: 9999999,
+                
             });
             }, 400);
 
@@ -95,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 document.addEventListener('click', function(event) {
     // Verifica si el elemento clicado (o su padre) tiene la clase deseada
+    
     if (event.target.matches('.btn-comprar') || event.target.matches('.btn-cesta')) {
         lanzarConfeti();
+
     }
 }, true); // <--- El 'true' es la clave: fase de captura
