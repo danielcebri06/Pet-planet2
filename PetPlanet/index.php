@@ -294,6 +294,8 @@ session_start();
   <script src="js/carrito.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/menu.js"></script> 
+  <script src=> "js/datos.js"</script>
+  
   
   <script>
     // 1. CONFIGURACIÓN BANNER PRINCIPAL

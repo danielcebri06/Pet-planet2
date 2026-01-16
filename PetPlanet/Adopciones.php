@@ -302,5 +302,7 @@ session_start();
   <script src="js/carrito.js"></script>
   <script src="js/adopociones.js"></script>
   <script src="js/menu.js"></script> 
+    <script src=> "js/datos.js"</script>
+
 </body>
 </html>

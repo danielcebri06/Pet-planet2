@@ -201,6 +201,8 @@ session_start();
   <script src="js/productoModal.js"></script>
   <script src="js/buscador.js"></script>
   <script src="js/carrito.js"></script>
+  <script src=> "js/datos.js"</script>
+
   
   <script src="js/accesorios.js"></script>
   <script src="js/menu.js"></script> 
