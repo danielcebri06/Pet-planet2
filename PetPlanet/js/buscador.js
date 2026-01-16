@@ -1,121 +1,81 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Selectores principales
-    // Usamos querySelector para mayor flexibilidad (clase o ID)
-    const inputBuscador = document.querySelector('.buscador'); 
-    const contenedorBuscador = document.querySelector('.buscador-contenedor');
+// js/buscador.js
 
-    // Si no existe el buscador en esta página, detenemos el script
-    if (!inputBuscador || !contenedorBuscador) return;
+document.addEventListener('DOMContentLoaded', () => {
+    //llamamos a los elementos del DOM
+    const input = document.getElementById('buscadorPrincipal');
+    const btn = document.getElementById('btnBuscarPrincipal');
 
-    // 1. Crear dinámicamente el contenedor de resultados (la lista flotante)
-    const listaResultados = document.createElement('div');
-    listaResultados.classList.add('resultados-busqueda');
-    listaResultados.style.display = 'none'; // Oculto por defecto
-    contenedorBuscador.appendChild(listaResultados);
+    //cuando se haga click en el boton o se presione enter en el input, se ejecuta la busqueda
+    if (btn) btn.addEventListener('click', buscarProductos);
+    if (input) {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') buscarProductos();
+        });
+    }
+});
+// Función principal de búsqueda asíncrona async hace que la función retorne una promesa 
+// y permite el uso de await dentro de ella hasta esperar a que se resuelvan otras promesas
+async function buscarProductos() {
+    const input = document.getElementById('buscadorPrincipal');
+    const termino = input.value.toLowerCase().trim();
 
-    // 2. Evento: Escuchar cuando el usuario escribe
-    inputBuscador.addEventListener('input', function() {
-        const termino = inputBuscador.value.trim();
+    if (termino.length < 2) {
+        alert("Por favor escribe al menos 2 caracteres.");
+        return;
+    }
 
-        // Si hay menos de 2 letras, ocultamos la lista y salimos
-        if (termino.length < 2) {
-            listaResultados.style.display = 'none';
-            listaResultados.innerHTML = '';
-            return;
-        }
+    // Usamos la función del archivo datos.js
+    const productos = await cargarBaseDeDatos();
 
-        // 3. Petición al servidor (Fetch)
-        fetch(`php/buscar_productos.php?q=${encodeURIComponent(termino)}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success && data.productos.length > 0) {
-                    mostrarListaResultados(data.productos);
-                } else {
-                    // Si no hay coincidencias, ocultamos la lista
-                    listaResultados.style.display = 'none'; 
-                }
-            })
-            .catch(error => console.error('Error en búsqueda:', error));
-    });
+    // Filtramos (simulando el LIKE de SQL)
+    const resultados = productos.filter(p => 
+        p.nombre.toLowerCase().includes(termino) || 
+        (p.descripcion && p.descripcion.toLowerCase().includes(termino))
+    );
 
-    // 4. Función para dibujar la lista de productos encontrados
-    function mostrarListaResultados(productos) {
-        listaResultados.innerHTML = ''; // Limpiar resultados anteriores
-        listaResultados.style.display = 'block'; // Mostrar la caja
+    mostrarResultadosEnModal(resultados);
+}
 
-        productos.forEach(producto => {
-            const item = document.createElement('div');
-            item.classList.add('item-resultado');
+function mostrarResultadosEnModal(productos) {
+    // Eliminar modal anterior si existe
+    const viejoModal = document.getElementById('modal-busqueda');
+    if (viejoModal) viejoModal.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'modal-busqueda';
+    modal.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;display:flex;justify-content:center;align-items:center;";
+
+    let contenidoHTML = `<div style="background:white;padding:20px;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;border-radius:8px;position:relative;">
+        <button onclick="document.getElementById('modal-busqueda').remove()" style="position:absolute;top:10px;right:10px;border:none;background:transparent;font-size:20px;cursor:pointer;">❌</button>
+        <h2>Resultados (${productos.length})</h2>`;
+
+    if (productos.length === 0) {
+        contenidoHTML += `<p>No se encontraron productos.</p>`;
+    } else {
+        productos.forEach(p => {
+            // Manejo de precio (algunos tienen precio_oferta, otros precio_original)
+            let precioFinal = p.precio_oferta || p.precio_original || 0;
             
-            // HTML interno del item: Imagen pequeña + Texto
-            item.innerHTML = `
-                <img src="imagenes/${producto.imagen}" alt="${producto.nombre}" class="img-mini" onerror="this.src='imagenes/logoPetPlanet.jpg'">
-                <div class="info-mini">
-                    <span class="nombre-mini">${producto.nombre}</span>
-                    <span class="precio-mini">${producto.precio.toFixed(2)}€</span>
+            contenidoHTML += `
+                <div style="border-bottom:1px solid #eee;padding:10px;display:flex;align-items:center;gap:15px;">
+                    <img src="imagenes/${p.imagen}" style="width:50px;height:50px;object-fit:contain;">
+                    <div style="flex-grow:1;">
+                        <strong>${p.nombre}</strong>
+                        <div style="color:green;font-weight:bold;">${parseFloat(precioFinal).toFixed(2)}€</div>
+                    </div>
+                    <button onclick="agregarAlCarrito('${p.nombre}', '${precioFinal}', '${p.imagen}', '${p.descripcion || ''}')" 
+                            style="background:#27ae60;color:white;border:none;padding:5px 10px;border-radius:4px;cursor:pointer;">
+                        Añadir
+                    </button>
                 </div>
             `;
-
-            // Evento: Al hacer clic en un resultado
-            item.addEventListener('click', () => {
-                abrirModalProducto(producto); // Abrimos el modal
-                listaResultados.style.display = 'none'; // Ocultamos la lista
-                inputBuscador.value = ''; // Limpiamos el input (opcional)
-            });
-
-            listaResultados.appendChild(item);
         });
     }
 
-    // 5. Función para abrir el Modal (Integra con tu modal existente)
-    function abrirModalProducto(producto) {
-        const modal = document.getElementById("modalProducto");
-        if (!modal) return;
-
-        // Referencias a los elementos dentro del modal
-        const modalImagen = document.getElementById("modalImagen");
-        const modalNombre = document.getElementById("modalNombre");
-        const modalDescripcion = document.getElementById("modalDescripcion");
-        const modalPrecio = document.getElementById("modalPrecio");
-        const btnCesta = modal.querySelector(".btn-cesta");
-
-        // Rellenar datos
-        modalImagen.src = "imagenes/" + producto.imagen;
-        modalNombre.textContent = producto.nombre;
-        modalDescripcion.textContent = producto.descripcion || "Sin descripción disponible.";
-        modalPrecio.textContent = "Precio: " + parseFloat(producto.precio).toFixed(2) + "€";
-        
-       
-        const nuevoBtn = btnCesta.cloneNode(true);
-        btnCesta.parentNode.replaceChild(nuevoBtn, btnCesta);
-        
-        nuevoBtn.addEventListener("click", () => {
-            if (window.agregarAlCarrito) {
-                window.agregarAlCarrito(
-                    producto.nombre, 
-                    producto.precio, 
-                    producto.imagen, 
-                    producto.descripcion
-                );
-            } else {
-                console.error("La función agregarAlCarrito no está definida.");
-            }
-            modal.style.display = "none";
-        });
-
-        modal.style.display = "block";
-        
-        const listaComentarios = document.getElementById("listaComentarios");
-        if (listaComentarios) {
-             listaComentarios.innerHTML = '<p class="sin-comentarios">Cargando comentarios...</p>';
-        }
-    }
-
-    // 6. Cerrar la lista si el usuario hace clic fuera del buscador
-    document.addEventListener('click', function(e) {
-        // Si el clic NO fue dentro del contenedor del buscador
-        if (!contenedorBuscador.contains(e.target)) {
-            listaResultados.style.display = 'none';
-        }
-    });
-});
+    // Cerrar el div del contenido
+    contenidoHTML += `</div>`;
+    modal.innerHTML = contenidoHTML;
+    // Agregar modal al body
+    //appendChild agrega un nodo al final de la lista de hijos de un nodo padre especificado
+    document.body.appendChild(modal);
+}
