@@ -1,120 +1,124 @@
-[
-  {
-    "id": "m001",
-    "nombre": "Toy",
-    "tipo": "perro",
-    "edad": "adulto",
-    "descripcion": "Cariñoso, sociable y con energía moderada.",
-    "imagen": "imagenes/perro1.jpg",
-    "disponible": true
-  },
-  {
-    "id": "m002",
-    "nombre": "Tristán",
-    "tipo": "perro",
-    "edad": "adulto",
-    "descripcion": "Cariñoso y juguetón, tamaño mediano. Ideal para familias activas.",
-    "imagen": "imagenes/perro2.jpg",
-    "disponible": true
-  },
-  {
-    "id": "m003",
-    "nombre": "Farru",
-    "tipo": "perro",
-    "edad": "anciano",
-    "descripcion": "Poco sociable, sólo busca que le quieran.",
-    "imagen": "imagenes/perro3.jfif",
-    "disponible": true
-  },
-  {
-    "id": "m004",
-    "nombre": "Pecas",
-    "tipo": "perro",
-    "edad": "adulto",
-    "descripcion": "Cariñosa y sociable, ideal para familias con niños.",
-    "imagen": "imagenes/perro4.jpeg",
-    "disponible": true
-  },
-  {
-    "id": "m005",
-    "nombre": "Lúa",
-    "tipo": "perro",
-    "edad": "adulto",
-    "descripcion": "Cariñoso, juguetón y sociable, ideal para familias con niños.",
-    "imagen": "imagenes/perro5.jfif",
-    "disponible": true
-  },
-  {
-    "id": "m006",
-    "nombre": "Michi",
-    "tipo": "gato",
-    "edad": "adulto",
-    "descripcion": "Macho capado. Casero, cariñoso y sociable.",
-    "imagen": "imagenes/gato1.png",
-    "disponible": true
-  },
-  {
-    "id": "m007",
-    "nombre": "Tisbe",
-    "tipo": "gato",
-    "edad": "cachorro",
-    "descripcion": "Cariñoso, juguetón y curioso. Tiene 3 meses.",
-    "imagen": "imagenes/gato2.webp",
-    "disponible": true
-  },
-  {
-    "id": "m008",
-    "nombre": "Pulga",
-    "tipo": "gato",
-    "edad": "cachorro",
-    "descripcion": "nquieto, juguetón y curioso. Tiene 3 meses.",
-    "imagen": "imagenes/gato3.jpg",
-    "disponible": true
-  },
-  {
-    "id": "m009",
-    "nombre": "Luna",
-    "tipo": "gato",
-    "edad": "adulto",
-    "descripcion": "Asustadizo y casero.",
-    "imagen": "imagenes/gato4.jpg",
-    "disponible": true
-  },
-  {
-    "id": "m010",
-    "nombre": "Sombra",
-    "tipo": "gato",
-    "edad": "adulto",
-    "descripcion": "Juguetón y sociable.",
-    "imagen": "imagenes/gato5.jpg",
-    "disponible": true
-  },
-  {
-    "id": "m011",
-    "nombre": "Agapornis",
-    "tipo": "pajaro",
-    "edad": "adulto",
-    "descripcion": "Agapornis en busca de pareja.",
-    "imagen": "imagenes/pajaro1.webp",
-    "disponible": true
-  },
-  {
-    "id": "m012",
-    "nombre": "periquitos",
-    "tipo": "pajaro",
-    "edad": "adulto",
-    "descripcion": "Pareja de periquitos muy fieles buscan hogar.",
-    "imagen": "imagenes/pajaro2.webp",
-    "disponible": true
-  },
-  {
-    "id": "m013",
-    "nombre": "Canarios",
-    "tipo": "pajaro",
-    "edad": "adulto",
-    "descripcion": "Canario hace honor a la expresión amarillo canario.",
-    "imagen": "imagenes/pajaro3.jpg",
-    "disponible": true
-  }
+{
+  "categoria": "Adopociones",
+  "descripcion": "Mascotas pendientes de ser adoptadas",
+  "productos":[
+    {
+      "id": "m001",
+      "nombre": "Toy",
+      "tipo": "perro",
+      "edad": "adulto",
+      "descripcion": "Cariñoso, sociable y con energía moderada.",
+      "imagen": "imagenes/perro1.jpg",
+      "disponible": true
+    },
+    {
+      "id": "m002",
+      "nombre": "Tristán",
+      "tipo": "perro",
+      "edad": "adulto",
+      "descripcion": "Cariñoso y juguetón, tamaño mediano. Ideal para familias activas.",
+      "imagen": "imagenes/perro2.jpg",
+      "disponible": true
+    },
+    {
+      "id": "m003",
+      "nombre": "Farru",
+      "tipo": "perro",
+      "edad": "anciano",
+      "descripcion": "Poco sociable, sólo busca que le quieran.",
+      "imagen": "imagenes/perro3.jfif",
+      "disponible": true
+    },
+    {
+      "id": "m004",
+      "nombre": "Pecas",
+      "tipo": "perro",
+      "edad": "adulto",
+      "descripcion": "Cariñosa y sociable, ideal para familias con niños.",
+      "imagen": "imagenes/perro4.jpeg",
+      "disponible": true
+    },
+    {
+      "id": "m005",
+      "nombre": "Lúa",
+      "tipo": "perro",
+      "edad": "adulto",
+      "descripcion": "Cariñoso, juguetón y sociable, ideal para familias con niños.",
+      "imagen": "imagenes/perro5.jfif",
+      "disponible": true
+    },
+    {
+      "id": "m006",
+      "nombre": "Michi",
+      "tipo": "gato",
+      "edad": "adulto",
+      "descripcion": "Macho capado. Casero, cariñoso y sociable.",
+      "imagen": "imagenes/gato1.png",
+      "disponible": true
+    },
+    {
+      "id": "m007",
+      "nombre": "Tisbe",
+      "tipo": "gato",
+      "edad": "cachorro",
+      "descripcion": "Cariñoso, juguetón y curioso. Tiene 3 meses.",
+      "imagen": "imagenes/gato2.webp",
+      "disponible": true
+    },
+    {
+      "id": "m008",
+      "nombre": "Pulga",
+      "tipo": "gato",
+      "edad": "cachorro",
+      "descripcion": "nquieto, juguetón y curioso. Tiene 3 meses.",
+      "imagen": "imagenes/gato3.jpg",
+      "disponible": true
+    },
+    {
+      "id": "m009",
+      "nombre": "Luna",
+      "tipo": "gato",
+      "edad": "adulto",
+      "descripcion": "Asustadizo y casero.",
+      "imagen": "imagenes/gato4.jpg",
+      "disponible": true
+    },
+    {
+      "id": "m010",
+      "nombre": "Sombra",
+      "tipo": "gato",
+      "edad": "adulto",
+      "descripcion": "Juguetón y sociable.",
+      "imagen": "imagenes/gato5.jpg",
+      "disponible": true
+    },
+    {
+      "id": "m011",
+      "nombre": "Agapornis",
+      "tipo": "pajaro",
+      "edad": "adulto",
+      "descripcion": "Agapornis en busca de pareja.",
+      "imagen": "imagenes/pajaro1.webp",
+      "disponible": true
+    },
+    {
+      "id": "m012",
+      "nombre": "periquitos",
+      "tipo": "pajaro",
+      "edad": "adulto",
+      "descripcion": "Pareja de periquitos muy fieles buscan hogar.",
+      "imagen": "imagenes/pajaro2.webp",
+      "disponible": true
+    },
+    {
+      "id": "m013",
+      "nombre": "Canarios",
+      "tipo": "pajaro",
+      "edad": "adulto",
+      "descripcion": "Canario hace honor a la expresión amarillo canario.",
+      "imagen": "imagenes/pajaro3.jpg",
+      "disponible": true
+    }
   
-]
+  ]
+}
