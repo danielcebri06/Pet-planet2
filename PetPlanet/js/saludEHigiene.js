@@ -10,7 +10,7 @@ function lanzarConfeti() {
         
         // Efecto 1: Disparo central
         confetti({
-            particleCount: 1000,
+            particleCount: 500,
             spread: 500,
             origin: { y: 0.5 },
             zIndex: 9999999, // Z-Index muy alto para que salga ENCIMA del modal
@@ -20,7 +20,7 @@ function lanzarConfeti() {
         // Efecto 2: Pequeños disparos laterales (opcional, para más fiesta)
         setTimeout(() => {
             confetti({
-                particleCount: 1000,
+                particleCount: 500,
                 angle: 60,
                 spread: 500,
                 origin: { x: 0 },
@@ -32,7 +32,7 @@ function lanzarConfeti() {
         }, 200);
         setTimeout(() => {
         confetti({
-                particleCount: 1000,
+                particleCount: 500,
                 angle: 120,
                 spread: 500,
                 origin: { x: 1 },
