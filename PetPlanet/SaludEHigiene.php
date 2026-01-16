@@ -114,6 +114,7 @@ session_start();
     </div>
   </footer>
 
+<<<<<<< Updated upstream
   <script src="js/database.js"></script>
   <script src="js/modoOscuro.js"></script>
   <script src="js/productoModal.js"></script>
@@ -122,4 +123,16 @@ session_start();
   
   <script src="js/menu.js"></script> 
   </body>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script src="js/saludEHigiene.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/modoOscuro.js"></script>
+    <script src="js/productoModal.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/menu.js"></script> 
+    <script src="js/datos.js"></script>         <
+>>>>>>> Stashed changes
 </html>
