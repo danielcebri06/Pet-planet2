@@ -37,3 +37,4 @@ document.addEventListener('DOMContentLoaded', function() {
     selectorCategoria.addEventListener('change', filtrarAccesorios);
 
 });
+
