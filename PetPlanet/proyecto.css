@@ -322,6 +322,72 @@ body.modo-oscuro .modo-oscuro-switch {
 
 
 /* ============================================================
+   FORMULARIOS (RESERVAS / ADOPCIONES)
+============================================================ */
+/* Contenedor del formulario*/
+.formulario-reserva {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-top: 16px;
+  max-width: 520px;
+}
+
+/* Cada campo del formulario en vertical */
+#formReserva label {
+  display: block;           /* convierte el label en bloque (salto de línea real) */
+  margin-bottom: 12px;      /* separa un campo del siguiente */
+  font-weight: 500;
+}
+
+/* Input debajo del texto del label */
+#formReserva label input {
+  display: block;           /* fuerza el input a ir debajo */
+  width: 100%;              /* ocupa el ancho del formulario */
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  background: #fff;
+}
+
+/* Al hacer foco, resalta */
+#formReserva label input:focus {
+  border-color: #5c9b5b;
+}
+
+/* Mensajes de error debajo del input */
+#formReserva label small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: #c0392b;
+  min-height: 16px;         /* reserva espacio para que no “salte” el layout */
+}
+
+/* Enlace volver (para que no parezca “pegado”) */
+#formReserva a {
+  text-decoration: none;
+  color: #1c692e;
+  font-weight: 600;
+}
+
+#formReserva a:hover {
+  text-decoration: underline;
+}
+
+/* Alineacion de la tarjeta de la mascota con el formulario */
+#infoReserva .producto {
+  cursor: default;
+  max-width: 520px;
+}
+
+
+
+/* ============================================================
    RESPONSIVE 
 ============================================================ */
 
