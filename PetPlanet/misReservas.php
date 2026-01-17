@@ -68,7 +68,7 @@ session_start();
     <div id="reservas-contenedor" class="productos-lista"></div>
 
     <div style="margin-top: 16px;">
-        <button id="btnVaciarReservas" class="btn-eliminar">Vaciar reservas</button>
+        <button id="btnVaciarReservas" class="btn-peligro">Vaciar reservas</button>
     </div>
   </main>
 
