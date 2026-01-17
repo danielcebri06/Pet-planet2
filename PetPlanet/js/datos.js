@@ -6,7 +6,8 @@
 async function cargarBaseDeDatos() {
     const archivos = [
         'accesorios.json',
-        'saludEHigiene.json'
+        'saludEHigiene.json',
+        'adopciones.json'
         // Agrega 'alimentacion.json' aquí si lo creas
     ];
 
