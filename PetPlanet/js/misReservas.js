@@ -35,9 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Edad:</strong> ${r.edad}</p>
         <p><strong>Creada:</strong> ${fechaBonita}</p>
 
-        <button class="btn-eliminar-reserva" data-id="${r.id}">
-          Eliminar reserva
+        <button class="btn-peligro btn-eliminar-reserva" data-id="${r.id}">
+            Eliminar reserva
         </button>
+        
+        <a href="reservaFormulario.php?id=${r.id}">
+            Completar datos
+        </a>
       `;
 
       contenedor.appendChild(card);
