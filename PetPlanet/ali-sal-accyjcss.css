@@ -114,6 +114,39 @@ body {
 .producto .btn-comprar:hover {
     background: #145a24;
 }
+
+/* Tarjeta de mascota en formulario de reserva */
+.producto-reserva {
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+
+/* Permite usar .btn-comprar también en enlaces <a> */
+a.btn-comprar {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Botones de acción peligrosa (eliminar / vaciar) */
+.btn-peligro {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #c0392b;      
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-peligro:hover {
+  filter: brightness(0.9);
+}
+
+
 /* Estilos para ofertas */
 .oferta-tag {
     position: absolute;
