@@ -1,9 +1,10 @@
 {
-  "categoria": "Adopociones",
+  "categoria": "Adopciones",
   "descripcion": "Mascotas pendientes de ser adoptadas",
   "productos":[
     {
       "id": "m001",
+      "categoria": "adopcion",
       "nombre": "Toy",
       "tipo": "perro",
       "edad": "adulto",
@@ -13,6 +14,7 @@
     },
     {
       "id": "m002",
+      "categoria": "adopcion",
       "nombre": "Tristán",
       "tipo": "perro",
       "edad": "adulto",
@@ -22,6 +24,7 @@
     },
     {
       "id": "m003",
+      "categoria": "adopcion",
       "nombre": "Farru",
       "tipo": "perro",
       "edad": "anciano",
@@ -31,6 +34,7 @@
     },
     {
       "id": "m004",
+      "categoria": "adopcion",
       "nombre": "Pecas",
       "tipo": "perro",
       "edad": "adulto",
@@ -40,6 +44,7 @@
     },
     {
       "id": "m005",
+      "categoria": "adopcion",
       "nombre": "Lúa",
       "tipo": "perro",
       "edad": "adulto",
@@ -49,6 +54,7 @@
     },
     {
       "id": "m006",
+      "categoria": "adopcion",
       "nombre": "Michi",
       "tipo": "gato",
       "edad": "adulto",
@@ -58,6 +64,7 @@
     },
     {
       "id": "m007",
+      "categoria": "adopcion",
       "nombre": "Tisbe",
       "tipo": "gato",
       "edad": "cachorro",
@@ -67,6 +74,7 @@
     },
     {
       "id": "m008",
+      "categoria": "adopcion",
       "nombre": "Pulga",
       "tipo": "gato",
       "edad": "cachorro",
@@ -76,6 +84,7 @@
     },
     {
       "id": "m009",
+      "categoria": "adopcion",
       "nombre": "Luna",
       "tipo": "gato",
       "edad": "adulto",
@@ -85,6 +94,7 @@
     },
     {
       "id": "m010",
+      "categoria": "adopcion",
       "nombre": "Sombra",
       "tipo": "gato",
       "edad": "adulto",
@@ -94,6 +104,7 @@
     },
     {
       "id": "m011",
+      "categoria": "adopcion",
       "nombre": "Agapornis",
       "tipo": "pajaro",
       "edad": "adulto",
@@ -103,6 +114,7 @@
     },
     {
       "id": "m012",
+      "categoria": "adopcion",
       "nombre": "periquitos",
       "tipo": "pajaro",
       "edad": "adulto",
@@ -112,6 +124,7 @@
     },
     {
       "id": "m013",
+      "categoria": "adopcion",
       "nombre": "Canarios",
       "tipo": "pajaro",
       "edad": "adulto",
