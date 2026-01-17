@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${m.imagen}" alt="${m.nombre}">
         <h3>${m.nombre}</h3>
         <p>${m.descripcion || ""}</p>
-        <button class="btn-reservar-tarjeta">Reservar</button>
+        <button class="btn-comprar btn-reservar-tarjeta">Reservar</button>
       `;
 
       lista.appendChild(card);
