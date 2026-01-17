@@ -1,23 +1,25 @@
 // js/datos.js
 
 async function cargarBaseDeDatos() {
-    // AQUÍ ESTABA EL PROBLEMA:
-    // Antes buscaba 'saludEHigiene.json', ahora busca 'json/saludEHigiene.json'
     const archivos = [
         'json/accesorios.json',       
         'json/saludEHigiene.json',
-        'json/adopciones.json'
+        'json/adopciones.json' // ¡Perfecto que lo hayas añadido!
     ];
 
     let todosLosProductos = [];
 
     try {
-        const promesas = archivos.map(url => fetch(url).then(respuesta => {
-            if (!respuesta.ok) {
-                throw new Error(`No se pudo encontrar el archivo: ${url}`);
-            }
-            return respuesta.json();
-        }));
+        // TRUCO ANTI-CACHÉ: Añadimos una "marca de tiempo" a la URL
+        // Así el navegador cree que es un archivo nuevo cada vez y no usa la memoria vieja.
+        const promesas = archivos.map(url => 
+            fetch(url + '?t=' + Date.now()).then(respuesta => {
+                if (!respuesta.ok) {
+                    throw new Error(`No se pudo encontrar el archivo: ${url}`);
+                }
+                return respuesta.json();
+            })
+        );
         
         const resultados = await Promise.all(promesas);
 
@@ -38,7 +40,6 @@ async function cargarBaseDeDatos() {
 
     } catch (error) {
         console.error("Error cargando la base de datos JSON:", error);
-        // Si falla, mostramos una alerta para que sepas qué archivo falta
         alert("Error: " + error.message);
         return [];
     }

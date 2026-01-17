@@ -12,12 +12,14 @@ session_start();
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="filtro.css">  
 </head>
-<body>
+
+<body data-categoria="salud">
+
     <header>
         <div class="principal">
             <div class="buscador-contenedor">
-                <input type="text" placeholder="Buscar..." class="buscador">
-                <button class="btn-buscar">Buscar</button>
+                <input type="text" placeholder="Buscar..." class="buscador" id="buscadorPrincipal">
+                <button class="btn-buscar" id="btnBuscarPrincipal">Buscar</button>
             </div>
             <div class="cabecera-logo">
                 <a href="index.php"><img src="imagenes/logoPetPlanet.jpg" alt="Logo" class="logo"></a>
@@ -61,8 +63,7 @@ session_start();
         <p>Productos para salud e higiene.</p>
           
         <div class="filtros filtros-adopcion" data-filtros>
-           
-            <select class="filtro-select"  id="filtro-tipo">
+            <select class="filtro-select" id="filtro-tipo">
                 <option value="todos">Todos los animales</option>
                 <option value="perro">Perro</option>
                 <option value="gato">Gato</option>
@@ -77,73 +78,30 @@ session_start();
             </select>
         </div>
 
-        <div class="productos-lista">
-            <div class="producto" data-tipo="perro" data-nombre="Champú para perros" data-precio="8.99" data-descripcion="Champú suave." data-imagen="champu perro.webp">
-                <img src="imagenes/champu perro.webp" alt="Champú">
-                <div class="oferta-tag">¡OFERTA!</div>
-                <h2>Champú para perros</h2>
-                <p class="precio-original">12.01€</p>
-                <p class="precio-oferta">8.99€</p>
-                <button class="btn-comprar">Comprar</button>
+        <div id="lista-productos" class="productos-lista">
             </div>
-            <div class="producto" data-tipo="gato" data-nombre="Cepillo de dientes para gatos" data-precio="13.00" data-descripcion="Cepillo dental." data-imagen="Cepillo Gatos.webp">
-                <img src="imagenes/Cepillo Gatos.webp" alt="Cepillo">
-                <h2>Cepillo de dientes</h2>
-                <p>Precio: 13.00€</p>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-            <div class="producto" data-tipo="pajaro" data-nombre="Arena para pájaros" data-precio="18.50" data-descripcion="Arena especial." data-imagen="arena pajaro.jpg">
-                <img src="imagenes/arena pajaro.jpg" alt="Arena">
-                <div class="oferta-tag">¡OFERTA!</div>
-                <h2>Arena para pájaros</h2>
-                <p class="precio-original">23.00€</p>
-                <p class="precio-oferta">18.50€</p>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-        
-        
-            <div class="producto" data-tipo="perro" data-nombre="Limpiador de patas para perros" data-precio="16.00" data-descripcion="Limpiador fácil." data-imagen="limpiapatas.webp">
-                <img src="imagenes/limpiapatas.webp" alt="Limpiador">
-                <h2>Limpiador de patas</h2>
-                <p>Precio: 16.00€</p>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-            <div class="producto" data-tipo="gato" data-nombre="Pasta de dientes para gatos" data-precio="9.25" data-descripcion="Pasta dental." data-imagen="pasta de dientes.webp">
-                <img src="imagenes/pasta de dientes.webp" alt="Pasta">
-                <h2>Pasta de dientes</h2>
-                <p>Precio: 9.25€</p>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-            <div class="producto" data-tipo="pajaro" data-nombre="Protector hepático para pájaros" data-precio="13.20" data-descripcion="Suplemento." data-imagen="51yux+ii4CL.webp">
-                <img src="imagenes/51yux+ii4CL.webp" alt="Protector">
-                <h2>Protector hepático</h2>
-                <p>Precio: 13.20€</p>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-        </div>
     </section>
     
     <div id="modalProducto" class="modal"><div class="modal-contenido"><span class="cerrar">&times;</span><img id="modalImagen" src="" alt="" class="modal-img"><h2 id="modalNombre"></h2><p id="modalDescripcion"></p><p class="modal-precio" id="modalPrecio"></p><button class="btn-cesta">Añadir a la cesta</button><div class="comentarios-seccion"><h3>Comentarios</h3><div id="listaComentarios" class="lista-comentarios"></div><div class="nuevo-comentario"><textarea id="comentarioTexto"></textarea><button id="btnEnviarComentario">💬 Enviar</button></div></div></div></div>
 
-<footer>
-    <div class="copyright">
-      &copy; 2025 PET PLANET.
-    </div>
-    <div class="legales">
-        <a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a> | <a href="#">Política de Cookies</a>
-    </div>
- </footer>
+    <footer>
+        <div class="copyright">
+          &copy; 2025 PET PLANET.
+        </div>
+        <div class="legales">
+            <a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a> | <a href="#">Política de Cookies</a>
+        </div>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="js/datos.js"></script>
 
-    <script src="js/saludEHigiene.js"></script>
-    <script src="js/database.js"></script>
+    <script src="js/buscador.js"></script>
+    <script src="js/listarProductos.js"></script> 
+    <script src="js/carrito.js"></script>
     <script src="js/modoOscuro.js"></script>
     <script src="js/productoModal.js"></script>
-    <script src="js/buscador.js"></script>
-    <script src="js/carrito.js"></script>
-    <script src="js/menu.js"></script> 
-      <script src=> "js/datos.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="js/saludEHigiene.js"></script>
 
 </body>
 </html>
