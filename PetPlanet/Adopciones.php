@@ -93,7 +93,7 @@ session_start();
                 <p id="modalDescripcion"></p>
                 <p><strong>Tipo:</strong> <span id="modalTipo"></span></p>
                 <p><strong>Edad:</strong> <span id="modalEdad"></span></p>
-                <button class="btn-reservado" id="btnReservar">Reservar adopción</button>
+                <button class="btn-comprar btn-reservado" id="btnReservar">Reservar adopción</button>
             </div>
     </div>
  
