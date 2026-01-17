@@ -1,3 +1,5 @@
+console.log("CARGADO adopcionModal NUEVO");
+
 document.addEventListener("DOMContentLoaded", () => {
   
     // 1) Referencias al modal
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Guardamos la mascota seleccionada (leemos data-* del HTML)
     mascotaActual = {
+      id: card.dataset.id || "",
       nombre: card.dataset.nombre || "",
       descripcion: card.dataset.descripcion || "",
       tipo: card.dataset.tipo || "",
@@ -72,8 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 7) Botón reservar adopción (por ahora: solo placeholder)
   btnReservar?.addEventListener("click", () => {
-    // Aquí llamaré al sistema de reservas
-    alert("Reserva pendiente de implementar ✅");
+    const resultado = addReserva(mascotaActual);
+
+    if (resultado.ok) {
+      alert("✅ Reserva añadida correctamente");
+    } else {
+      alert("⚠️ " + resultado.msg);
+    }
+
     modal.style.display = "none";
   });
 });
