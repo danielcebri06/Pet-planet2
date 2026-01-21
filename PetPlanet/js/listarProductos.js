@@ -1,3 +1,4 @@
+//esperamos a que el DOM esté cargado y ponemos el async para poder usar await dentro
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Buscamos el contenedor donde se van a pintar los productos
     const contenedor = document.getElementById('lista-productos');
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error("La función cargarBaseDeDatos no existe. Revisa que js/datos.js esté incluido antes de este script.");
         }
         
-        // 5. Cargamos TODOS los productos
+        // 5. Cargamos TODOS los productos(esperamos a q ue se resuelva la promesa)
         const todosLosProductos = await cargarBaseDeDatos();
 
         // 6. Filtramos los productos según la página
