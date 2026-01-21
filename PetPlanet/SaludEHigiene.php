@@ -145,6 +145,7 @@ session_start();
     <script src="js/carrito.js"></script>
     <script src="js/listarProductos.js"></script>
     <script src="js/datos.js"></script>
+    <script src="js/confeti.js"></script>
 
 </body>
 </html>
