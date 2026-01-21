@@ -107,16 +107,20 @@ session_start();
     </footer>
 
   <script src="js/modoOscuro.js"></script>
-  <!--<script src="js/menu.js"></script> -->
+  
 
   <script src="js/database.js"></script>
-
+  <script src="js/listarProductos.js"></script>
   <script src="js/datos.js"></script>
   <script src="js/buscador.js"></script>
   
   <script src="js/adopciones.js"></script>
   <script src="js/reservas.js"></script>
   <script src="js/adopcionModal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="js/confeti.js"></script>
+  
+
   
 
 </body>

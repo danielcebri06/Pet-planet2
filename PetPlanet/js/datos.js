@@ -4,7 +4,7 @@ async function cargarBaseDeDatos() {
     const archivos = [
         'json/accesorios.json',       
         'json/saludEHigiene.json',
-        'json/adopciones.json' // ¡Perfecto que lo hayas añadido!
+        
     ];
 
     let todosLosProductos = [];
