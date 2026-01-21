@@ -41,6 +41,7 @@ session_start();
                         <a href="login.html" class="menu-link login-link">🔑 Iniciar sesión</a>
                     <?php endif; ?>
                     <a href="carrito.php" class="menu-link carrito-link">🛒 Mi Carrito</a>
+                    <a href="misReservas.php" class="menu-link">📅 Mis reservas</a>
                     <div class="modo-oscuro-switch">
                         <label class="switch"><input type="checkbox" id="darkModeSwitch"><span class="slider"></span></label>
                         <span id="estadoModoOscuro">Modo oscuro desactivado</span>
@@ -146,6 +147,7 @@ session_start();
     <script src="js/listarProductos.js"></script>
     <script src="js/datos.js"></script>
     <script src="js/confeti.js"></script>
+    
 
 </body>
 </html>
