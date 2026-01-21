@@ -315,7 +315,6 @@ session_start();
     const swiperProductos = new Swiper('.swiper-productos', {
         direction: 'horizontal',
         loop: true, // Infinito
-        
         // Espacio entre productos (en px)
         spaceBetween: 20,
 
