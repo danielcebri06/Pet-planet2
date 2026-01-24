@@ -385,6 +385,20 @@ body.modo-oscuro .modo-oscuro-switch {
   max-width: 520px;
 }
 
+/* ==========================
+   BANNER DONACIÓN (Adopciones)
+   ========================== */
+.banner-donacion {
+  background: #fff4cc;
+  border: 2px solid #f1c40f;
+  color: #3a2d00;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  margin: 12px 0 18px;
+  text-align: center;
+}
+
 
 
 /* ============================================================
