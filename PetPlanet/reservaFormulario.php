@@ -10,6 +10,7 @@ session_start();
   <title>Formulario de reserva - PET PLANET</title>
   <link rel="stylesheet" href="proyecto.css">
   <link rel="stylesheet" href="ali-sal-accyjcss.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
 </head>
 <body>
 
@@ -80,6 +81,32 @@ session_start();
                 <small id="errDni"></small>
             </label>
 
+            <hr style="margin:16px 0;">
+            <h2 style="margin: 0 0 10px;">Cita de la reserva</h2>
+
+            <label>
+                Tipo de reserva
+                <select id="tipoReserva" required>
+                    <option value="">Selecciona...</option>
+                    <option value="visita">Visita</option>
+                    <option value="recogida">Recogida</option>
+                </select>
+                <small id="errTipo"></small>
+            </label>
+
+            <label>
+                Fecha y hora de la cita
+                <input type="datetime-local" id="fechaHora" required />
+                <small id="errFechaHora"></small>
+            </label>
+
+            <div id="pasoCalendario" style="margin-top:12px;" hidden>
+                <p style="margin: 6px 0 10px;">
+                    Podrás ver la reserva confirmada en el calendario de adopciones.
+                </p>
+                <div id="calendarFormulario"></div>
+            </div>
+
             <div style="margin-top: 14px;">
                 <button id="btnGuardar" class="btn-comprar" type="submit" disabled>Guardar datos</button>
                 <a href="misReservas.php">Volver</a>
@@ -97,6 +124,7 @@ session_start();
     </footer>
 
     <script src="js/reservas.js"></script>
-    <script src="js/reservaFormulario.js"></script>
+    <script src="js/reservaFormulario.js?v=1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 </body>
 </html>
