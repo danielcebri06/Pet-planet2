@@ -1,5 +1,3 @@
-console.log("CARGADO adopcionModal NUEVO");
-
 document.addEventListener("DOMContentLoaded", () => {
   
     // 1) Referencias al modal
@@ -24,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4) Abrir modal al hacer click en la imagen de una tarjeta
   document.addEventListener("click", (e) => {
-    // Si se pulsamos el botón "Reservar" de la tarjeta
+    // Si se pulsa el botón "Reservar" de la tarjeta
     const btnTarjeta = e.target.closest(".btn-reservar-tarjeta");
 
-    // Si se pulsamos la imagen de la tarjeta
+    // Si se pulsa la imagen de la tarjeta
     const img = e.target.closest(".producto img");
 
     // Si no es ni botón ni imagen, no hacemos nada
@@ -73,16 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.style.display = "none";
   });
 
-  // 7) Botón reservar adopción (por ahora: solo placeholder)
+  // 7) Botón reservar adopción 
   btnReservar?.addEventListener("click", () => {
     const resultado = addReserva(mascotaActual);
 
-    if (resultado.ok) {
-      alert("✅ Reserva añadida correctamente");
-    } else {
+    if (!resultado.ok) {
       alert("⚠️ " + resultado.msg);
+      return;
     }
 
-    modal.style.display = "none";
+    // Reserva creada -> vamos al formulario a rellenar datos + elegir cita
+    window.location.href = `reservaFormulario.php?id=${encodeURIComponent(mascotaActual.id)}`;
   });
 });
