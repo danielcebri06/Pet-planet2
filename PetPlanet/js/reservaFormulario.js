@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const info = document.getElementById("infoReserva");
   const form = document.getElementById("formReserva");
 
@@ -6,12 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const email = document.getElementById("email");
   const telefono = document.getElementById("telefono");
   const dni = document.getElementById("dni");
+  const tipoReserva = document.getElementById("tipoReserva");
+  const fechaHora = document.getElementById("fechaHora");
   const btnGuardar = document.getElementById("btnGuardar");
 
   const errNombre = document.getElementById("errNombre");
   const errEmail = document.getElementById("errEmail");
   const errTelefono = document.getElementById("errTelefono");
   const errDni = document.getElementById("errDni");
+  const errTipo = document.getElementById("errTipo");
+  const errFechaHora = document.getElementById("errFechaHora");
 
   // 1) Saber qué reserva vamos a editar (por URL: ?id=m001)
   const params = new URLSearchParams(window.location.search);
@@ -98,6 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
+  function validarTipo() {
+    const v = (tipoReserva.value || "").trim();
+    if (!v) { errTipo.textContent = "Selecciona visita o recogida."; return false; }
+    errTipo.textContent = "";
+    return true;
+  }
+
+  function validarFechaHora() {
+    const v = (fechaHora.value || "").trim();
+    if (!v) { errFechaHora.textContent = "Selecciona una fecha y hora."; return false; }
+    errFechaHora.textContent = "";
+    return true;
+  }
+
   function validarTodo() {
     const ok =
       validarNombre() &
@@ -116,10 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   validarTodo();
 
-  // 5) Guardar al enviar
+  // Revalidar también cuando cambie el tipo
+  tipoReserva?.addEventListener("change", validarTodo);
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!validarTodo()) return;
+    if (!validarTipo()) return;
+    if (!validarFechaHora()) return;
 
     const usuario = {
       nombre: nombre.value.trim(),
@@ -128,15 +151,23 @@ document.addEventListener("DOMContentLoaded", () => {
       dni: dni.value.trim()
     };
 
-    // actualizar reserva en el array
+    const cita = {
+      tipo: tipoReserva.value,
+      start: new Date(fechaHora.value).toISOString()
+    };
+
+    // Guardamos usuario, citas y estado
     const nuevas = reservas.map(r => {
       if (r.id !== id) return r;
-      return { ...r, usuario };
+      return { ...r, usuario, cita, estado: "confirmada" };
     });
 
     saveReservas(nuevas);
 
-    alert("✅ Datos guardados");
-    window.location.href = "misReservas.php";
+    console.log("Guardado OK. Reserva actualizada:", nuevas.find(r => r.id === id));
+    console.log("Ahora en localStorage:", JSON.parse(localStorage.getItem("petplanet_reservas")));
+
+    alert("✅ Reserva confirmada con cita.");
+    window.location.href = "Adopciones.php";
   });
 });
