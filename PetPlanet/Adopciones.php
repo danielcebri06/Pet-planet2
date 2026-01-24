@@ -12,6 +12,7 @@ session_start();
   <link rel="stylesheet" href="ali-sal-accyjcss.css">    
   <link rel="stylesheet" href="modal.css"> 
   <link rel="stylesheet" href="filtro.css">   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
 </head>
 <body>
   <header>
@@ -60,7 +61,12 @@ session_start();
 
   <section class="productos">
         <h1>Adopciones de Mascotas</h1>
-        <p>Descubre nuestros amigos necesitados de una familia.</p>
+        <p>Descubre a nuestros amigos necesitados de una familia.</p>
+
+        <!-- Banner donación (se muestra al entrar y se oculta con setTimeout) -->
+        <div id="bannerDonacion" class="banner-donacion" hidden>
+            🐾 DONA COMIDA O UTENSILIOS PARA LAS MASCOTAS PENDIENTES DE ADOPCIÓN
+        </div>
 
         <!-- Filtros (DOM) -->
         <div class="filtros filtros-adopcion" data-filtros>
@@ -82,6 +88,14 @@ session_start();
 
         <!-- TARJETAS DE LAS MASCOTAS - lo rellena el JS leyendo adopciones.json-->
         <div class="productos-lista" id="mascotas-lista"></div>
+
+        <!-- Calendario FullCalendar (Reservas) -->
+        <h2 class="titulo-calendario">Reservas</h2>
+        <p class="texto-calendario">
+           Aquí verás las citas confirmadas. Haz clic en una cita para eliminarla.
+        </p>
+
+  <div id="calendarAdopciones" class="calendar-adopciones"></div>
 
     </section>
 
@@ -117,6 +131,13 @@ session_start();
   <script src="js/adopciones.js"></script>
   <script src="js/reservas.js"></script>
   <script src="js/adopcionModal.js"></script>
+
+  <!-- FullCalendar JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+  <!-- Integración del calendario -->
+  <script src="js/adopcionesCalendar.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script src="js/confeti.js"></script>
   
