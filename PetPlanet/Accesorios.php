@@ -209,5 +209,9 @@ session_start();
 
   <script src="js/accesorios.js"></script>
   <script src="js/confeti.js"></script>
+  <div id="loader-container" class="loader-hidden">
+    <div class="loader"></div>
+    <p>Filtrando resultados...</p>
+</div>
   </body>
 </html>
