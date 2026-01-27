@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Selectores de filtros
     const selectorTipo = document.getElementById('filtro-tipo');
     const selectorPrecio = document.getElementById('filtro-precio');
-    const productos = document.querySelectorAll('.producto');
+    
 
     // 2. Función de filtrado
     function filtrarProductos() {
+        const productos = document.querySelectorAll('.producto');
         if (!selectorTipo || !selectorPrecio) return;
 
         const tipoElegido = selectorTipo.value;

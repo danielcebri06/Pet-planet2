@@ -4,6 +4,7 @@
   "descripcion": "Productos para salud e higiene para mascotas",
   "productos": [
     {
+      "categoria": "Salud e Higiene",
       "id": 1,
       "tipo": "perro",
       "nombre": "Champú para perros",
@@ -14,6 +15,7 @@
       "imagen": "champu perro.webp"
     },
     {
+      "categoria": "Salud e Higiene",
       "id": 2,
       "tipo": "gato",
       "nombre": "Cepillo de dientes para gatos",
@@ -24,6 +26,7 @@
       "imagen": "Cepillo Gatos.webp"
     },
     {
+      "categoria": "Salud e Higiene",
       "id": 3,
       "tipo": "pajaro",
       "nombre": "Arena para pájaros",
@@ -34,6 +37,7 @@
       "imagen": "arena pajaro.jpg"
     },
     {
+      "categoria": "Salud e Higiene",
       "id": 4,
       "tipo": "perro",
       "nombre": "Limpiador de patas para perros",
@@ -44,6 +48,7 @@
       "imagen": "limpiapatas.webp"
     },
     {
+      "categoria": "Salud e Higiene",
       "id": 5,
       "tipo": "gato",
       "nombre": "Pasta de dientes para gatos",
@@ -54,6 +59,7 @@
       "imagen": "pasta de dientes.webp"
     },
     {
+      "categoria": "Salud e Higiene",
       "id": 6,
       "tipo": "pajaro",
       "nombre": "Protector hepático para pájaros",
